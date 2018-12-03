@@ -1,0 +1,19 @@
+
+@import './variables.scss';
+.link {
+	display: block;
+	font-family: 'Open Sans';
+	color: rgba($white, 0.9);
+	text-decoration: none;
+	font-weight: 500;
+	padding: 10px 0 ;
+	margin: 0 30px;
+	border-bottom: 2px solid transparent;
+
+	transition: all ease-in 0.08s;
+}
+
+.link:hover{
+	border-bottom: 2px solid $primary;
+	color: $white;
+}
