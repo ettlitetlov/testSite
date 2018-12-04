@@ -21,6 +21,7 @@ class Nav extends Component {
 		};
 		const regularStyle = {
 			position: 'relative',
+			/*background: 'rgb(0, 82, 140)'*/
 			background: '#1d1d1d'
 		};
 

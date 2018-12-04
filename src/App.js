@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { withRouter } from 'react-router-dom';
 import './App.scss';
 
+/* componenets */
 import Home from './Home';
 import Inlamning from './Inlamning';
 
+/* font awesome */
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
+
+library.add(faNewspaper);
 
 class App extends Component {
 
@@ -14,6 +19,12 @@ class App extends Component {
 
 		this.state = {
 		};
+	}
+
+	componenetDidMount(){
+		
+		console.log("font awesome", library);
+
 	}
 
   render() {

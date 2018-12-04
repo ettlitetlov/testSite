@@ -2,3 +2,6 @@ $primary: rgb(0, 82, 140);
 $secondary: #61dafb;
 $white: whitesmoke;
 $dark: #1d1d1d;
+$grey: lighten(#1d1d1d, 12%);
+$dark-blue: darken($primary, 10%);
+$light-grey: lighten($dark, 40%);
