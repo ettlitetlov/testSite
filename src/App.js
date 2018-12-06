@@ -9,8 +9,9 @@ import Inlamning from './Inlamning';
 /* font awesome */
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
+import { faDesktop, faVideo, faSolarPanel } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faNewspaper);
+library.add(faNewspaper, faDesktop, faVideo, faSolarPanel);
 
 class App extends Component {
 

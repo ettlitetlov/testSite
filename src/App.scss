@@ -10,10 +10,13 @@ h3{ font-size: 30px; }
 h4{ font-size: 25px; }
 h5{ font-size: 18px; }
 h6{ font-size: 14px; }
+p{ font-size: 14px; }
 
 block {
 	display: block;
 }
+
+
 
 max {
 	max-width: 1200px;
@@ -21,6 +24,30 @@ max {
 	box-sizing: border-box;
 	display: block;
 	height: auto;
-	margin: auto;
+	margin: 0 auto;
 }
 
+
+@media (max-width: (50 + $lg) ) {
+
+	max {
+		max-width: 900px;
+	}
+
+}
+@media (max-width: (50 + $md2) ) {
+
+	max {
+		max-width: $md1;
+	}
+
+}
+
+
+@media (max-width: (50 + $md1)) {
+
+	max {
+		max-width: $sm;
+	}
+
+}

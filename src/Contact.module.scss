@@ -1,9 +1,10 @@
 @import './variables.scss';
 
 .container{
-	background-color: $primary;
+	background-color: $dark-blue;
 	width: 100%;
 	padding: 50px 0;
+	padding-bottom: 100px;
 
 	display: flex;
 	flex-flow: column wrap;
@@ -19,7 +20,7 @@ h1{
 }
 
 .card{
-	width: 250px;
+	min-width: 250px;
 
 	padding: 60px;
 	padding-top: 60px;
@@ -64,13 +65,16 @@ h1{
 
 .cardInfo{
 	padding-top: 30px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 
 .cardItem{
 	display: flex;
 	align-items: center;
-	padding: 0px 0;
+	padding: 14px 0;
+}
+.cardItem p{
+	color: $dark;
 }
 
 .cardIcon{
@@ -89,4 +93,13 @@ h1{
 }
 #mail{
 	background-image: url(./assets/icons/mail.png);
+}
+
+
+@media (max-width: 1000px) {
+
+	.card{
+		margin-right: 50px;
+	}
+
 }

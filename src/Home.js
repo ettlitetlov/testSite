@@ -6,6 +6,7 @@ import './variables.scss';
 import Nav from './Nav';
 import Header from './Header';
 import Contact from './Contact';
+import Footer from './Footer';
 
 class Home extends Component {
   render() {
@@ -13,7 +14,8 @@ class Home extends Component {
       [
       <Nav absolute={true} />,
       <Header />,
-      <Contact />
+      <Contact />,
+      <Footer />
       ]
     );
   }

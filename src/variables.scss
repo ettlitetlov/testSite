@@ -5,3 +5,16 @@ $dark: #1d1d1d;
 $grey: lighten(#1d1d1d, 12%);
 $dark-blue: darken($primary, 10%);
 $light-grey: lighten($dark, 40%);
+
+/* responsiveness */
+
+$lg: 1200px;
+$md2: 1000px;
+$md1: 800px;
+$sm: 500px;
+
+
+
+/* global vars */
+
+$card-margin: 20px;

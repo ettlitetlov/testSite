@@ -1,0 +1,63 @@
+@import './variables.scss';
+
+.card{
+	min-width: 170px;
+	max-width: 170px;
+	display: flex;
+	flex-flow: column;
+	padding: 40px;
+	margin: $card-margin;
+
+	background-color: white;
+	border: 1px solid #eaeaea;
+	border-radius: 2px 2px 10px 2px;
+
+	text-decoration: none;
+
+	transition: ease-out .1s;
+
+	color: $grey;
+}
+.card:hover > .cardText h3{
+	width: 10px;
+	border-bottom: 2px solid $primary;
+	color: $primary;
+}
+.card:hover .cardIcon{
+	color: darken($grey, 3%);
+}
+.card:hover{
+	cursor: pointer;
+	background-color: white;
+}
+.cardIcon{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 40px;
+
+	transition: ease-out .1s;
+}
+.cardText{
+	padding-bottom: 5px;
+}
+.cardText h3,p{
+	margin: 0;
+	padding: 0;
+}
+.cardText h3{
+	color: $dark-blue;
+	font-weight: 100;
+	padding-bottom: 4px;
+	border-bottom: 2px solid $light-grey;
+
+	width: 100%;
+	min-width: fit-content;
+	transition: all ease-out .2s;
+}
+.cardText p{
+	font-weight: 400;
+	padding-top: 15px;
+	line-height: 22px;
+}

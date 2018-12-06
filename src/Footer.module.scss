@@ -1,0 +1,67 @@
+@import './variables.scss';
+
+$footer-color: rgb(0, 64, 91);
+
+footer{
+	background-color: darken($dark-blue, 7%);
+	min-height: 25vh;
+	width: 100%;
+
+	padding-top: 40px; 
+	padding-bottom: 60px;
+
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+
+	color: $footer-color;
+}
+
+.links{
+	display: flex;
+	width: 100%;
+	align-items: center;
+	padding-top: 30px;
+}
+.links a{
+	color: $footer-color;
+	margin: 0 5px;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+}
+.links a:hover{
+	color: lighten($footer-color, 10%);
+}
+.links span{
+	display: block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50px;
+	margin: 0 10px;
+	background-color: $footer-color;
+}
+
+.logoContainer{
+	display: flex;
+	width: 100%;
+	padding-top: 80px;
+	align-items: flex-end;
+}
+.logo{
+	background-image: url(./assets/logo_small.png);
+	background-size: cover;
+	background-position: center;
+	width: 150px;
+	height: 75px;
+	filter: brightness(80%);
+	mix-blend-mode: soft-light;
+	margin-right: 20px;
+}
+.logoContainer p{
+	//trying to match the logo color
+	color: $footer-color;
+	font-weight: 600;
+	font-size: 18px;
+	letter-spacing: 1px;
+}

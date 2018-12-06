@@ -41,7 +41,6 @@ class Nav extends Component {
 				<nav className={styles.nav} style={this.state.style} >
 					<Link to="/" className={styles.logo} ></Link>
 					<NavItem title="materialinlämning" link="/Inlamning" />
-					<NavItem title="kontakt" link="#" />
 				</nav>
 			</div>
 
