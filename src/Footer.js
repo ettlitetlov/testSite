@@ -10,15 +10,7 @@ class Footer extends Component {
       <footer>
         <max className={styles.logoContainer} >
           <div className={styles.logo}></div>
-          <p>Vi skapar dina möjligheter</p>
-        </max>
-        
-        <max className={styles.links} >
-          <a href="#">support@ostmedia.se</a>
-          <span></span>
-          <a href="#">hej@ostmedia.se</a>
-          <span></span>
-          <a href="#">kundservice@ostmedia.se</a>
+          <div className={styles.slogan}></div>
         </max>
         
       </footer>

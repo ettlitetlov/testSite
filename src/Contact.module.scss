@@ -20,11 +20,9 @@ h1{
 }
 
 .card{
-	min-width: 250px;
+	width: 250px;
 
-	padding: 60px;
-	padding-top: 60px;
-	padding-bottom: 40px;
+	padding: 70px 50px;
 
 	margin-right: 100px; 
 
@@ -64,28 +62,47 @@ h1{
 }
 
 .cardInfo{
-	padding-top: 30px;
-	padding-bottom: 20px;
+	padding: 15px 0;
 }
 
 .cardItem{
 	display: flex;
 	align-items: center;
-	padding: 14px 0;
+	padding: 5px 0;
 }
 .cardItem p{
 	color: $dark;
+}
+.cardItem a{
+	color: $dark;
+	text-decoration: none;
+	font-weight: 400;
 }
 
 .cardIcon{
 	width: 20px;
 	height: 20px;
-	background-size: cover;
+	background-size: contain;
 	background-position: center;
 
 	margin-right: 20px;
 
 	background-image: url(./assets/icons/phone.png);
+}
+.cardButton {
+	transition: all .1s ease-out;
+
+	display: flex;
+
+}
+.cardButton span{
+	transition: all .1s ease-out;
+}
+.cardButton:hover{
+	padding-left: 10px;
+}
+.cardButton:hover span{
+	margin-left: -10px;
 }
 
 #phone{
@@ -93,6 +110,9 @@ h1{
 }
 #mail{
 	background-image: url(./assets/icons/mail.png);
+}
+#arrow{
+	background-image: url(./assets/icons/r_arrow.png);	
 }
 
 

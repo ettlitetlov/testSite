@@ -82,6 +82,7 @@ video{
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;
+	align-items: center;
 	width: 590px;
 
 	animation: flipIt 2.5s cubic-bezier(.29,.82,.17,1.02) 0s 1;
@@ -102,6 +103,7 @@ video{
 	word-spacing: 3px;
 	line-height: 30px;
 	margin: 0;
+	text-align: center;
 }
 
 .rotate-enter{

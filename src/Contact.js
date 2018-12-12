@@ -1,40 +1,42 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import styles from './Contact.module.scss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Contact extends Component {
 	render() {
 		return(
-			<div className={styles.container}>
+			<div className={styles.container} id="contact">
 				<max>
-					<h1>Kontakta Oss</h1>
+					<h1>Kontakta oss.</h1>
 				</max>
 				<max className={styles.row} >
+
 					<div className={styles.card}>
-						<h6>om du har frågor som</h6>
-						<h3>Privatperson</h3>
-						<div className={styles.cardInfo} >
-							<div className={styles.cardItem} >
-								<div className={styles.cardIcon} id={styles.phone} ></div>
-								<p>013-45 74 37</p>
-							</div>
-							<div className={styles.cardItem} >
-								<div className={styles.cardIcon} id={styles.mail} ></div>
-								<p>prenumerant@ostmedia.se</p>
-							</div>
-						</div>
-					</div>
-					<div className={styles.card}>
-						<h6>om du har frågor som</h6>
 						<h3>Annonsör</h3>
 						<div className={styles.cardInfo} >
 							<div className={styles.cardItem} >
 								<div className={styles.cardIcon} id={styles.phone} ></div>
-								<p>013-45 55 87</p>
+								<p>011-200 355</p>
 							</div>
 							<div className={styles.cardItem} >
 								<div className={styles.cardIcon} id={styles.mail} ></div>
-								<p>journalist@ostmedia.se</p>
+								<a href="mailto:hej@ostmedia.se">hej@ostmedia.se</a>
+							</div>
+						</div>
+					</div>
+					<div className={styles.card}>
+						<h3>Privatperson</h3>
+						<div className={styles.cardInfo} >
+							<div className={styles.cardItem} >
+								<p>Hitta alla uppgifter som kund hos oss.</p>
+							</div>
+							<div className={styles.cardItem}>
+								<Link to="/Partners" className={styles.cardButton} >
+									<div className={styles.cardIcon} id={styles.arrow} ></div>
+									<span>Kontakt</span>
+								</Link>
 							</div>
 						</div>
 					</div>

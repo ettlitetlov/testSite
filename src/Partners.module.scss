@@ -1,0 +1,6 @@
+@import './variables.scss';
+
+.cardContainer{
+	justify-content: flex-start !important;
+	flex: 1 1 $partner-card-width !important;
+}

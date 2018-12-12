@@ -6,16 +6,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Card extends Component {
   render() {
+
+    const linkTitles = this.props.linkTitles;
+    const links = this.props.links.map( (link, i) =>
+      <li><a href={link}>{linkTitles[i]}</a></li>
+    );
+
     return (
-      <a href={this.props.link} className={styles.card}>
+      <div className={styles.card}>
         <div className={styles.cardIcon}>
-          <FontAwesomeIcon icon={this.props.icon} size="4x"/>
+          <img src={this.props.icon} alt="icon"/>
         </div>
         <div className={styles.cardText}>
           <h3>{this.props.title}</h3>
-          <p>{this.props.description}</p>
+          <ul>
+            {links}
+          </ul>
         </div>
-      </a>
+      </div>
     );
   }
 }

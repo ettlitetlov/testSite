@@ -5,13 +5,14 @@ import './App.scss';
 /* componenets */
 import Home from './Home';
 import Inlamning from './Inlamning';
+import Partners from './Partners';
 
 /* font awesome */
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
-import { faDesktop, faVideo, faSolarPanel } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faNewspaper, faDesktop, faVideo, faSolarPanel);
+library.add(faAngleDown);
 
 class App extends Component {
 
@@ -24,7 +25,6 @@ class App extends Component {
 
 	componenetDidMount(){
 		
-		console.log("font awesome", library);
 
 	}
 
@@ -35,6 +35,7 @@ class App extends Component {
 			<div>
 		      	<Route exact path="/" component={Home} />
 		        <Route path="/inlamning" component={Inlamning} />
+		        <Route path="/Partners" component={Partners} />
 	        </div>
         </Router>
         	

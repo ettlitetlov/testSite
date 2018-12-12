@@ -1,0 +1,49 @@
+@import './variables.scss';
+
+$icon-padding: 20px;
+$titlepadding: 90px;
+$card-height: 140px;
+
+$card-width-reduction: 20px; //used for responsiveness flexibility
+
+.card{
+	background-color: white;
+	display: flex;
+	align-items: center;
+
+	padding: 10px;
+	padding-top: 20px;
+	min-width: $partner-card-width;
+	max-width: ($partner-card-width + 20);
+	height: $card-height;
+
+	margin: 15px;
+
+	border: 1px solid #eaeaea;
+
+	text-decoration: none;
+	color: $grey;
+}
+.cardIcon{
+	width: calc(#{$card-height} - #{$card-width-reduction} - #{$icon-padding});
+	padding: $icon-padding;
+	object-fit: contain;
+}
+.title{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+}
+.title h3{
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+	word-break: word-break;
+}
+.title h5{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	font-size: 14px;
+	margin-top: -55px; // approx line height
+}
