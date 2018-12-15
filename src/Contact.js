@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { HashLink as AnchorLink } from "react-router-hash-link";
+
 import styles from './Contact.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -33,9 +35,9 @@ class Contact extends Component {
 								<p>Hitta alla uppgifter som kund hos oss.</p>
 							</div>
 							<div className={styles.cardItem}>
-								<Link to="/Partners" className={styles.cardButton} >
+								<Link to="/nyhetsmedier" className={styles.cardButton} >
 									<div className={styles.cardIcon} id={styles.arrow} ></div>
-									<span>Kontakt</span>
+									<span>Våra Nyhetsmedier</span>
 								</Link>
 							</div>
 						</div>

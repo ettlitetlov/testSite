@@ -12,7 +12,7 @@ class Home extends Component {
   render() {
     return (
       [
-      <Nav absolute={true} />,
+      <Nav absolute={true} home={true} />,
       <Header />,
       <Contact />,
       <Footer />

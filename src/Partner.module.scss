@@ -1,0 +1,155 @@
+@import './variables.scss';
+
+$header-height: 100vh;
+$header-padding-bottom: 15vh;
+
+// CANT be larger than 50 or below calc needs to be changed
+// needs to add unit when used
+$header-blur-width: 45; 
+$header-normal-width: (100 - $header-blur-width);
+
+$border-radius: 4px;
+$title-padding-y: 30px;
+$title-padding-x: 50px;
+
+$info-padding: 140px;
+
+.header{
+	height: $header-height;
+
+	display: flex;
+	align-items: flex-end;
+	z-index: 5;
+}
+.header::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+
+	height: $header-height;
+	background-image: url(./assets/nt_bg.jpg);
+	background-size: 100vw auto;
+	background-position: 50% 20%;
+	filter: brightness(90%);
+}
+/*.header::before{
+	content: '';
+	position: absolute;
+	width: calc(#{$header-blur-width}% + 10px);
+	height: calc(#{$header-height} + 10px);
+
+	margin-left: -5px;
+	margin-top: -5px;
+
+	background-image: url(./assets/nt_bg.jpg);
+	background-size: 100vw auto;
+
+	background-position: 0 20%; 
+
+	filter: blur(4px);
+
+	z-index: 3;
+}
+.headerHalfPicLayer{
+	content: '';
+	position: absolute;
+	width: $header-normal-width;
+	height: $header-height;
+
+	margin-left: $header-blur-width;
+	margin-top: 0;
+
+	background-image: url(./assets/nt_bg.jpg);
+	background-size: 100vw auto;
+
+	background-position: ($header-blur-width + 0vw) 20%; // hack to convert to vw
+
+	z-index: 3;
+}*/
+.header max{
+	z-index: 20;
+}
+.headerContent{
+	height: $header-height;
+	width: 100%;
+	position: absolute;
+
+	display: flex;
+	align-items: center;
+
+
+	z-index: 5;
+}
+.logo{
+	max-width: 500px;
+	height: auto;
+	margin-left: -35px;
+	object-fit: contain;
+}
+.headerTitle{
+	display: flex;
+	margin-bottom: $header-padding-bottom;
+}
+.headerTitle h1{
+	margin: 0;
+	max-width: 450px;
+	font-weight: 100;
+	font-size: 50px;
+	padding: $title-padding-y;
+	padding-left: $title-padding-x;
+
+	border-radius: $border-radius 0 0px $border-radius; // bottom and top left
+	
+	background-color: rgba($dark-blue, 0.9);
+	color: white;
+}
+.headerTitleContact{
+	max-width: 400px;
+	padding: $title-padding-y;
+	padding-right: $title-padding-x;
+
+	background-color: rgba(white, 1);
+	display: flex;
+	align-items: center;
+
+	border-radius: 0px $border-radius $border-radius 0px; // bottom and top left
+
+	color: $grey;
+}
+.headerTitleContact ul{
+	padding: 0;
+	margin: 0;
+}
+.headerTitleContact li{
+	list-style-type: none;
+	word-break: break-word;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 5px 0;
+
+	display: flex;
+	align-items: center;
+}
+.headerTitleContact li b{
+	margin-right: 5px;
+	font-weight: 400;
+}
+.blurHider{
+	width: 100%;
+	height: $info-padding;
+	background-color: $primary;
+	z-index: 40;
+	position: absolute;
+}
+.cardsContainer{
+	padding-top: $info-padding;
+	padding-bottom: $info-padding;
+
+	background: linear-gradient(.35turn, $primary, darken($primary, 10%));
+	width: 100%;
+	min-height: 100vh;
+	z-index: -5;
+
+	display: flex;
+	flex-flow: column wrap;
+}

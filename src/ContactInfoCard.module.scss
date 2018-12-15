@@ -1,0 +1,83 @@
+@import './variables.scss';
+
+$card-outer-padding-x: 60px;
+$card-inner-padding-x: 20px;
+
+.card{
+	//hack to make background change in the middle
+	background: linear-gradient(to right, $white, $white 49%, transparent 51%, transparent 100%);
+	margin-bottom: 150px;
+
+}
+.cardContent{
+	max-width: 60%;
+	padding: 40px $card-inner-padding-x;
+	padding-right: $card-outer-padding-x;
+	background-color: $white;
+	border-radius: 5px;
+
+	color: $grey;
+}
+.cardContent h2{
+	margin: 0;
+	font-weight: 100;
+	font-size: 50px;
+
+	display: flex;
+	align-items: center;
+
+	margin-left: -50px;
+}
+.cardContent h2::before{
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-color: $primary;
+	margin-right: 40px;
+}
+.text{
+	display: flex;
+	flex-flow: row wrap;
+	padding: 30px 0;
+}
+.section{
+	margin-right: 40px;
+}
+.section h4{
+	margin: 0;
+	margin-bottom: 10px;
+
+	font-weight: 400;
+	font-size: 25px;
+}
+.section ul{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.section li{
+	padding: 5px 0;
+	font-weight: 100;
+}
+.section li b{
+	padding: 5px 0;
+	font-weight: 400;
+}
+.description{
+	font-size: 16px;
+}
+
+
+// overwrites for lefthandsided cards 
+.card:nth-child(even) max{
+	display: flex;
+	justify-content: flex-end;
+}
+.card:nth-child(even){
+	background: linear-gradient(to right, transparent, transparent 49%, $white 51%, $white 100%);
+}
+.card:nth-child(even) .cardContent{
+	padding-left: (40 + $card-outer-padding-x); //to fit the dot
+	padding-right: $card-inner-padding-x;
+}

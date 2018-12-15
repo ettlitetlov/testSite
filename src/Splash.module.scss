@@ -6,6 +6,9 @@ $splash-description-height: (100 - $splash-height);
 $small-splash-height: 60vh;
 $small-description-height: (100 - $splash-height); // same as for the big one
 
+$tiny-splash-height: 40vh;
+$tiny-description-height: (100 - $splash-height); // same as for the big one
+
 $title-padding: 25px;
 $title-line-margin: 15px;
 $title-line-width: 3.5px;
@@ -13,6 +16,10 @@ $title-line-width: 3.5px;
 
 #bg_interview .splash:after{
 	background-image: url(./assets/interview.jpg);
+}
+#nt .splash:after{
+	background-image: none;
+	background-color: $primary;
 }
 
 .container{
@@ -167,5 +174,34 @@ $title-line-width: 3.5px;
 }
 .small .splash::after{
 	height: $small-splash-height !important;
+}
+
+/* tiny version overwrites */
+.tiny .splash{
+	height: $tiny-splash-height !important;
+	background-color: $primary;
+}
+.tiny .description,.tiny .descriptionAlt{
+	height: $tiny-description-height !important;
+}
+.tiny .splash::before{
+	height: $tiny-splash-height !important;
+}
+.tiny .splash::after{
+	height: $tiny-splash-height !important;
+}
+.tiny .splash:after{
+	mix-blend-mode: normal;
+	filter: brightness(100%) grayscale(100%);
+}
+.tiny .splash:before{
+	background: $primary;
+	mix-blend-mode: normal;
+}
+.tiny .title{
+	text-shadow: none;
+}
+.tiny .title:before{
+	background-color: white;
 }
 

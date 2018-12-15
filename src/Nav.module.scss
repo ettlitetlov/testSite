@@ -3,18 +3,18 @@ $padding-y: 40px;
 
 .nav{
 	width: calc(100% - 2*#{$padding-x});
-	height: 50px;
 	padding: $padding-y $padding-x;
 	background: linear-gradient(.5turn, rgba(black, 0.3), transparent);
 
 	display: flex;
+	flex-flow: row wrap;
 	justify-content: flex-end;
 	align-items: flex-end;
 
 	position: absolute;
 	top: 0;
 
-	z-index: 5;
+	z-index: 20;
 }
 .logo{
 	margin-right: auto;

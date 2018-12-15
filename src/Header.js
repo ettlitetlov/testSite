@@ -26,7 +26,7 @@ class Header extends Component {
 					</video>
 				</div>
 					<div className={styles.headerText}>
-						<h1>Nutidens mediehus.</h1>
+						<h1>Nutidens mediebolag.</h1>
 						<h4>
 							I en föränderlig medievärld hjälper vi dig hitta rätt mediekanaler för att nå befintliga och nya kunder. Vi skapar dina möjligheter.
 						</h4>

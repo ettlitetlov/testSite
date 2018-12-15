@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.scss';
 
 /* componenets */
 import Home from './Home';
 import Inlamning from './Inlamning';
 import Partners from './Partners';
+import Partner from './Partner';
 
 /* font awesome */
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -35,7 +36,12 @@ class App extends Component {
 			<div>
 		      	<Route exact path="/" component={Home} />
 		        <Route path="/inlamning" component={Inlamning} />
-		        <Route path="/Partners" component={Partners} />
+
+		        <Switch>
+			        <Route path="/nyhetsmedier/norrkopings-tidningar" render={() => (<Partner name="nt" name="Norrköpings-Tidningar" />)} />
+
+			        <Route path="/nyhetsmedier" component={Partners} />
+		        </Switch>
 	        </div>
         </Router>
         	

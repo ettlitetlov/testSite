@@ -1,0 +1,21 @@
+const PartnersData = 
+[
+	{
+		id:  1,
+		name: "Norrköpings-Tidningar",
+		Nyhetstips: {
+			Redationen: {
+				E-post: "tipsa@nt.se",
+				Telefon: "011-200 166"
+			},
+			Videoredaktionen {
+				E-post: "videoredaktionen@ostgotamedia.se",
+				Telefon: "011-200 260"
+			},
+			
+			description: "Du kan alltid vända dig till oss på tidningen och lämna tips. Om du inte vill lämna ut ditt namn går det bra att vara anonym.",
+
+		}
+
+	}
+]

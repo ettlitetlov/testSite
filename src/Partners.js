@@ -18,6 +18,7 @@ import mvt from './assets/icons/mvt_clipped.png';
 import vt from './assets/icons/vt_clipped.png';
 import lp from './assets/icons/lp_clipped.png';
 import nm from './assets/icons/nm_clipped.png';
+import v from './assets/icons/v.jpg';
 
 class Partners extends Component {
   render() {
@@ -48,6 +49,7 @@ class Partners extends Component {
             <PartnersCard title="Västerviks-Tidningen" link="#" icon={vt} type="nyhetsmedia" />
             <PartnersCard title="Linköpings-Posten" link="#" icon={lp} type="tidning" />
             <PartnersCard title="Norrköpings-Magazinet" link="#" icon={nm} type="tidning" />
+            <PartnersCard title="Vimmerby-Tidningen" link="#" icon={v} type="nyhetsmedia" />
           </div>
         </max>
       </div>,
