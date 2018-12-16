@@ -11,7 +11,10 @@ class Contact extends Component {
 		return(
 			<div className={styles.container} id="contact">
 				<max>
-					<h1>Kontakta oss.</h1>
+					<div className={styles.title} >
+						<h1>Kontakta oss.</h1>
+						<p>Vi är aldrig mer än ett telefonsamtal eller mail bort. Här hittar du alla uppgifter du behöver för att nå oss, vi ser fram emot att höra från dig.</p>
+					</div>
 				</max>
 				<max className={styles.row} >
 
@@ -32,7 +35,7 @@ class Contact extends Component {
 						<h3>Privatperson</h3>
 						<div className={styles.cardInfo} >
 							<div className={styles.cardItem} >
-								<p>Hitta alla uppgifter som kund hos oss.</p>
+								<p>Gå vidare här för att välja det nyhetsmedie du vill Kontakta</p>
 							</div>
 							<div className={styles.cardItem}>
 								<Link to="/nyhetsmedier" className={styles.cardButton} >

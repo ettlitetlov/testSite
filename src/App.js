@@ -24,21 +24,19 @@ class App extends Component {
 		};
 	}
 
-	componenetDidMount(){
-		
-
-	}
-
   render() {
+
+
+
     return (
     	
     	<Router>
 			<div>
-		      	<Route exact path="/" component={Home} />
+		      	<Route exact={true} path="/" component={Home} />
 		        <Route path="/inlamning" component={Inlamning} />
 
 		        <Switch>
-			        <Route path="/nyhetsmedier/norrkopings-tidningar" render={() => (<Partner name="nt" name="Norrköpings-Tidningar" />)} />
+			        <Route path="/nyhetsmedier/:name" component={Partner} />
 
 			        <Route path="/nyhetsmedier" component={Partners} />
 		        </Switch>

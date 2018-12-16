@@ -19,9 +19,40 @@ import vt from './assets/icons/vt_clipped.png';
 import lp from './assets/icons/lp_clipped.png';
 import nm from './assets/icons/nm_clipped.png';
 import v from './assets/icons/v.jpg';
+import folk from './assets/icons/folkbladet_clipped.png';
 
 class Partners extends Component {
+
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      partners: []
+    };
+  }
+
+
+  componentDidMount() {
+    let dataURL = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/nyhetsmedia?_embed";
+    fetch(dataURL)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          partners: res
+        })
+      })
+  }
+
+
   render() {
+
+    const url = this.props.match.url;
+
+    const partners = this.state.partners.map((nyhetsmedia, i) => {
+      return <PartnersCard title={nyhetsmedia.acf.name} link={url + "/" + nyhetsmedia.acf.name.toLowerCase()} icon={nyhetsmedia._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url} />
+    });
+
+
     return (
     	[
       <Nav absolute={true} />,
@@ -38,18 +69,13 @@ class Partners extends Component {
         </div>
         <div className={splash.description} id="description">
           <max>
-            <h5 className={splash.descriptionText}> Här hittar du all information om våra Nyhetsmedier och deras kontakter</h5>
+            <h5 className={splash.descriptionText}> Här hittar du all information och kontaktuppgifter till våra nyhetsmedier</h5>
           </max>
         </div>
         <max>
           <div className={[styles.cardContainer, splash.cardContainer].join(' ')}>
-            <PartnersCard title="Norrköpings Tidningar" link="#" icon={nt} type="nyhetsmedia" />
-            <PartnersCard title="Linköpings Correspondenten" link="#" icon={corren} type="nyhetsmedia" />
-            <PartnersCard title="Motala Vadstena Tidningen" link="#" icon={mvt} type="nyhetsmedia" />
-            <PartnersCard title="Västerviks-Tidningen" link="#" icon={vt} type="nyhetsmedia" />
-            <PartnersCard title="Linköpings-Posten" link="#" icon={lp} type="tidning" />
-            <PartnersCard title="Norrköpings-Magazinet" link="#" icon={nm} type="tidning" />
-            <PartnersCard title="Vimmerby-Tidningen" link="#" icon={v} type="nyhetsmedia" />
+            {partners}
+            
           </div>
         </max>
       </div>,

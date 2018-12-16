@@ -11,6 +11,7 @@ $card-inner-padding-x: 20px;
 }
 .cardContent{
 	max-width: 60%;
+	min-height: 280px;
 	padding: 40px $card-inner-padding-x;
 	padding-right: $card-outer-padding-x;
 	background-color: $white;
@@ -39,11 +40,16 @@ $card-inner-padding-x: 20px;
 .text{
 	display: flex;
 	flex-flow: row wrap;
-	padding: 30px 0;
+	padding-top: 30px;
 }
 .section{
 	margin-right: 40px;
+	padding-bottom: 30px;
 }
+.section:nth-last-child(n + 2):nth-child(n){
+	min-width: 300px;
+}
+
 .section h4{
 	margin: 0;
 	margin-bottom: 10px;

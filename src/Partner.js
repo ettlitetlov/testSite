@@ -13,64 +13,96 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 class Partner extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: "",
+      partnerData: [],
+      cardData: [],
+      cardSection: [],
+      slug: this.props.match.params.name
+    };
+  }
+
+  componentDidMount() {
+
+    let dataURL = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/nyhetsmedia?slug=" + this.state.slug + "&_embed";
+    fetch(dataURL)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          partnerData: res
+        })
+    })
+
+    let cardDataUrl = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/contactcard";
+    fetch(cardDataUrl)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          cardData: res
+        })
+    })
+  }
+
+  setBg(url){
+    document.getElementById("bg").style.backgroundImage = "url('" + url + "')";
+  }
+
+
+
+
   render() {
 
     const bg_id = "" + this.props.name;
 
-    const data = 
-    [
-      {
-        name: "Redaktionen",
-        listTitle: ["E-post", "Telefon"],
-        listInfo: ["tipsa@nt.se", "011-200 260"]
-      },
-      {
-        name: "Videoredaktionen",
-        listTitle: ["E-post", "Telefon"],
-        listInfo: ["videoredaktionen@ostgotamedia.se", "011-200 260"]
+
+    const headerCard = this.state.partnerData.map((data,i) => {
+      return <div className={styles.headerTitleContact}>
+              <ul>
+                <li><b>Telefon:</b> {data.acf.phone}</li>
+                <li><b>Öppettider mån-fre:</b> {data.acf.openhours}</li>
+                <li><b>Besöksaddress:</b> {data.acf.address}</li>
+                <li><b>E-post:</b> {data.acf.mail}</li>
+              </ul>
+             </div>
+    });
+
+    const title = this.state.partnerData.map((data,i) => {
+      this.setBg(data.acf.bg);
+      return <h1>{data.acf.name}</h1>
+    });
+
+    const contactCards = this.state.cardData.map((card,i) => {
+      if (card.acf.parent_nyhetsmedie.post_title.toLowerCase() == this.state.slug){
+        return <ContactInfoCard
+                  name={card.acf.title}
+                  fullName={card.title.rendered}
+                  description={card.acf.description}
+                />
       }
-    ]
+    })
 
     return (
     	[
       <Nav absolute={true} partner={true} />,
       <div>
-        <div className={styles.header} id={styles[bg_id]}>
+        <div className={styles.header}>
+        <div className={styles.headerBg} id="bg"></div>
           <max>
 
             <div className={styles.headerTitle} >
-              <h1>Norrköpings-Tidningar</h1>
-              <div className={styles.headerTitleContact} >
-                <ul>
-                  <li><b>Telefon:</b> 011-200 000</li>
-                  <li><b>Öppetider mån-fre:</b> 8-17</li> 
-                  <li><b>Besöksaddress:</b> Stohagsgatan 2, Norrköping</li> 
-                  <li><b>E-post till anställda:</b> fornamn.efternamn@nt.se</li> 
-                </ul>
-              </div>
+              {title}
+              {headerCard}
             </div>
           </max>
         </div>
           
         {/* <div className={styles.blurHider} ></div> */}
         <div className={styles.cardsContainer} >
-          <ContactInfoCard 
-            name="Nyhetstips" 
-            list={data} 
-            description="Vad innebär meddelandeskyddet? Meddelarskydd är ett skydd mot röjande eller efterforskning av uppgiftslämnarens identitet. Skyddet ges enligt tryckfrihetsförordningen (SFS-nummer 1949:105) och yttrandefrihetsgrundlagen (SFS-nummer 1991:1469)."
-          />
-
-          <ContactInfoCard 
-            name="Utebliven Tidning" 
-            list={data} 
-            description="Vad innebär meddelandeskyddet? Meddelarskydd är ett skydd mot röjande eller efterforskning av uppgiftslämnarens identitet. Skyddet ges enligt tryckfrihetsförordningen (SFS-nummer 1949:105) och yttrandefrihetsgrundlagen (SFS-nummer 1991:1469)."
-          />
-
-          <ContactInfoCard 
-            name="Utebliven Tidning" 
-            list={data} 
-            description="Vad innebär meddelandeskyddet? Meddelarskydd är ett skydd mot röjande eller efterforskning av uppgiftslämnarens identitet. Skyddet ges enligt tryckfrihetsförordningen (SFS-nummer 1949:105) och yttrandefrihetsgrundlagen (SFS-nummer 1991:1469)."
-          />
+          {contactCards}
 
         </div>
       </div>,

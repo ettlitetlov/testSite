@@ -5,12 +5,42 @@ import styles from './ContactInfoCard.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class ContactInfoCard extends Component {
+
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      cardData: []
+    };
+  }
+
+  componentDidMount(){
+
+    let cardDataUrl = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/contactcard_section";
+    fetch(cardDataUrl)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          cardData: res
+        })
+    })
+  }
+
   render() {
 
-    /*const linkTitles = this.props.linkTitles;
-    const links = this.props.links.map( (link, i) =>
-      <li><a href={link}>{linkTitles[i]}</a></li>
-    );*/
+    let sections = this.state.cardData.map((data, i) => {
+      console.log("fullName=", this.props.fullName);
+      if (this.props.fullName == data.acf.parent_contactcard.post_title) {
+        return <div className={styles.section} >
+                  <h4>{data.acf.title}</h4>
+                  <ul>
+                    <li>E-post: <b>{data.acf.mail}</b></li>
+                    <li>Telefon: <b>{data.acf.phone}</b></li>
+                  </ul>
+                </div>
+      }
+    });
+
 
     return (
       <div className={styles.card}>
@@ -18,24 +48,9 @@ class ContactInfoCard extends Component {
           <div className={styles.cardContent} >
             <h2>{this.props.name}</h2>
             <div className={styles.text} >
-              <div className={styles.section} >
-                <h4>Redaktionen</h4>
-                <ul>
-                  <li>E-post: <b>tipsa@nt.se</b></li>
-                  <li>Telefon: <b>011-200 260</b></li>
-                </ul>
-              </div>
-              <div className={styles.section} >
-                <h4>Videoredaktionen</h4>
-                <ul>
-                  <li>E-post: <b>videoredaktionen@ostgotamedia.se</b></li>
-                  <li>Telefon: <b>011-200 260</b></li>
-                </ul>
-              </div>
+              {sections}
             </div>
-            <p className={styles.description}>
-              Vad innebär meddelandeskyddet? Meddelarskydd är ett skydd mot röjande eller efterforskning av uppgiftslämnarens identitet. Skyddet ges enligt tryckfrihetsförordningen (SFS-nummer 1949:105) och yttrandefrihetsgrundlagen (SFS-nummer 1991:1469).
-            </p>
+            <p className={styles.description}>{this.props.description}</p>
           </div>
         </max>
       </div>

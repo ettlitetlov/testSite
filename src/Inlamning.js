@@ -10,13 +10,25 @@ import Nav from './Nav';
 import Card from './Card';
 import Footer from './Footer';
 
-import printIcon from './assets/icons/PRINT.png';
+import printIcon from './assets/icons/print.png';
 import digitalIcon from './assets/icons/digital.PNG';
 import webbTvIcon from './assets/icons/WEBB-TV.PNG';
 import utomhusIcon from './assets/icons/Utomhus.PNG';
 
 class Inlamning extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+    };
+  }
+
+
   render() {
+
+
+
     return (
     	[
       <Nav absolute={true} />,
@@ -34,7 +46,7 @@ class Inlamning extends Component {
         <div className={splash.description} id="description">
           <max>
             <h5 className={splash.descriptionText}>
-              Här hittar du info om hur du levererar material till din bokade tidningsannons. Om du inte bokat ännu gör du det först via din ordinarie kontakta hos oss. Saknar du kontaktperson? Maila hej@ostmedia.se så hjälper vi dig.
+              Här hittar du info om hur du levererar material till din bokade annons. Om du inte bokat ännu gör du det först via din ordinarie kontakta hos oss. Saknar du kontaktperson? Kontakta <a href="mailto:hej@ostmedia.se">hej@ostmedia.se</a> så hjälper vi dig.
             </h5>
           </max>
         </div>

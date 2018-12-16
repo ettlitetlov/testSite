@@ -21,16 +21,17 @@ $info-padding: 140px;
 	align-items: flex-end;
 	z-index: 5;
 }
-.header::before{
-	content: '';
+.headerBg{
 	position: absolute;
 	width: 100%;
 
 	height: $header-height;
-	background-image: url(./assets/nt_bg.jpg);
+	background-color: #eaeaea;
 	background-size: 100vw auto;
 	background-position: 50% 20%;
 	filter: brightness(90%);
+
+	transition: all ease-in 0.1s;
 }
 /*.header::before{
 	content: '';
