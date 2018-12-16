@@ -29,7 +29,7 @@ class ContactInfoCard extends Component {
   render() {
 
     let sections = this.state.cardData.map((data, i) => {
-      console.log("fullName=", this.props.fullName);
+      console.log(this.props.fullName, data.acf.parent_contactcard.post_title);
       if (this.props.fullName == data.acf.parent_contactcard.post_title) {
         return <div className={styles.section} >
                   <h4>{data.acf.title}</h4>

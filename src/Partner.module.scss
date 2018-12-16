@@ -27,7 +27,8 @@ $info-padding: 140px;
 
 	height: $header-height;
 	background-color: #eaeaea;
-	background-size: 100vw auto;
+	background-size: cover;
+	background-repeat: no-repeat;
 	background-position: 50% 20%;
 	filter: brightness(90%);
 

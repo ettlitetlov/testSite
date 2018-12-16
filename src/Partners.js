@@ -33,7 +33,7 @@ class Partners extends Component {
 
 
   componentDidMount() {
-    let dataURL = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/nyhetsmedia?_embed";
+    let dataURL = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/nyhetsmedia?_fields=acf";
     fetch(dataURL)
       .then(res => res.json())
       .then(res => {
@@ -49,7 +49,9 @@ class Partners extends Component {
     const url = this.props.match.url;
 
     const partners = this.state.partners.map((nyhetsmedia, i) => {
-      return <PartnersCard title={nyhetsmedia.acf.name} link={url + "/" + nyhetsmedia.acf.name.toLowerCase()} icon={nyhetsmedia._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url} />
+      //remove spaces and replace with -. Also covert to lowercase
+      const link = url + "/" + nyhetsmedia.acf.name.toLowerCase().replace(/\s/g, "-");
+      return <PartnersCard title={nyhetsmedia.acf.name} link={link} icon={nyhetsmedia.acf.logo.url} />
     });
 
 

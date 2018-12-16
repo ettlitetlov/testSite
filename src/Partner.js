@@ -21,7 +21,6 @@ class Partner extends Component {
       title: "",
       partnerData: [],
       cardData: [],
-      cardSection: [],
       slug: this.props.match.params.name
     };
   }
@@ -76,8 +75,13 @@ class Partner extends Component {
     });
 
     const contactCards = this.state.cardData.map((card,i) => {
-      if (card.acf.parent_nyhetsmedie.post_title.toLowerCase() == this.state.slug){
+      
+      //remove spaces and replace with -. Also covert to lowercase
+      const dataTitle = card.acf.parent_nyhetsmedie.post_title.toLowerCase().replace(/\s/g, "-");
+      console.log(dataTitle == this.state.slug);
+      if (dataTitle == this.state.slug){
         return <ContactInfoCard
+                  key={card.id}
                   name={card.acf.title}
                   fullName={card.title.rendered}
                   description={card.acf.description}
@@ -99,8 +103,6 @@ class Partner extends Component {
             </div>
           </max>
         </div>
-          
-        {/* <div className={styles.blurHider} ></div> */}
         <div className={styles.cardsContainer} >
           {contactCards}
 
@@ -113,28 +115,3 @@ class Partner extends Component {
 }
 
 export default Partner;
-
-/*
-
-
-<div>
-        <div className={styles.header} id={styles[bg_id]}>
-          <div className={styles.headerHalfPicLayer}></div>
-            <div className={styles.headerContent} >
-              <max>
-                <div className={styles.headerTitle} >
-                  
-                  <h1>Norrköpings-Tidningar</h1>
-                  <div className={styles.headerTitleContact} >
-                    <ul>
-                      <li>ofheljf</li>
-                      <li>ofheljf</li>
-                      <li>ofheljf</li>  
-                    </ul>
-                  </div>
-                </div>
-              </max>
-            </div>
-        </div>
-
-*/
