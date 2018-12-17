@@ -6,20 +6,11 @@ import styles from './Partners.module.scss';
 import splash from './Splash.module.scss';
 
 import Nav from './Nav';
-import Card from './Card';
 import Footer from './Footer';
 import PartnersCard from './PartnersCard';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import nt from './assets/icons/nt_clipped.png';
-import corren from './assets/icons/corren_clipped.png';
-import mvt from './assets/icons/mvt_clipped.png';
-import vt from './assets/icons/vt_clipped.png';
-import lp from './assets/icons/lp_clipped.png';
-import nm from './assets/icons/nm_clipped.png';
-import v from './assets/icons/v.jpg';
-import folk from './assets/icons/folkbladet_clipped.png';
 
 class Partners extends Component {
 
