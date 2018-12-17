@@ -7,6 +7,7 @@ $card-inner-padding-x: 20px;
 	//hack to make background change in the middle
 	background: linear-gradient(to right, $white, $white 49%, transparent 51%, transparent 100%);
 	margin-bottom: 150px;
+	height: fit-content;
 
 }
 .cardContent{
@@ -81,9 +82,10 @@ $card-inner-padding-x: 20px;
 	justify-content: flex-end;
 }
 .card:nth-child(even){
-	background: linear-gradient(to right, transparent, transparent 49%, $white 51%, $white 100%);
+	background: linear-gradient(to right, transparent, transparent 70%, $white 30%, $white 100%);
 }
 .card:nth-child(even) .cardContent{
 	padding-left: (40 + $card-outer-padding-x); //to fit the dot
 	padding-right: $card-inner-padding-x;
+	min-width: 300px;
 }

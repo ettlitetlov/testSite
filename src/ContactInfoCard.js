@@ -16,7 +16,7 @@ class ContactInfoCard extends Component {
 
   componentDidMount(){
 
-    let cardDataUrl = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/contactcard_section";
+    let cardDataUrl = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/contactcard_section?per_page=50";
     fetch(cardDataUrl)
       .then(res => res.json())
       .then(res => {
@@ -29,13 +29,23 @@ class ContactInfoCard extends Component {
   render() {
 
     let sections = this.state.cardData.map((data, i) => {
-      console.log(this.props.fullName, data.acf.parent_contactcard.post_title);
+      //console.log(this.props.fullName, data.acf.parent_contactcard.post_title);
+      let phone = "";
+      let mail = "";
       if (this.props.fullName == data.acf.parent_contactcard.post_title) {
+        
+        if(data.acf.phone) {
+          
+          phone = <li>Telefon: <b>{data.acf.phone}</b></li>; 
+        }
+        if(data.acf.mail) {
+          mail = <li>E-post: <b>{data.acf.mail}</b></li>;
+        }
         return <div className={styles.section} >
                   <h4>{data.acf.title}</h4>
                   <ul>
-                    <li>E-post: <b>{data.acf.mail}</b></li>
-                    <li>Telefon: <b>{data.acf.phone}</b></li>
+                    {mail}
+                    {phone}
                   </ul>
                 </div>
       }

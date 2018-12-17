@@ -36,7 +36,7 @@ class Partner extends Component {
         })
     })
 
-    let cardDataUrl = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/contactcard";
+    let cardDataUrl = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/contactcard?per_page=50";
     fetch(cardDataUrl)
       .then(res => res.json())
       .then(res => {
