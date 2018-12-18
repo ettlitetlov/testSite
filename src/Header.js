@@ -28,7 +28,7 @@ class Header extends Component {
 					<div className={styles.headerText}>
 						<h1>Nutidens mediebolag.</h1>
 						<h4>
-							I en föränderlig medievärld hjälper vi dig hitta rätt mediekanaler för att nå befintliga och nya kunder. Vi skapar dina möjligheter.
+							Vår verksamhet vilar på trovärdighet. I en omvärld som ständigt förändras hjälper vi dig att orientera dig. Dygnet runt servar vi dig med nyheter, men också med smarta lösningar för att nå ut och få din affär att växa.
 						</h4>
 					</div>
 

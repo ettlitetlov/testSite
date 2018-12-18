@@ -16,7 +16,7 @@ class ContactInfoCard extends Component {
 
   componentDidMount(){
 
-    let cardDataUrl = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/contactcard_section?per_page=50";
+    let cardDataUrl = "http://localhost/Projects/ostmedia-complete/backend/wp-json/acf/V3/contactcard_section?per_page=50";
     fetch(cardDataUrl)
       .then(res => res.json())
       .then(res => {

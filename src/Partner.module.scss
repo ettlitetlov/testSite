@@ -114,7 +114,7 @@ $info-padding: 140px;
 	display: flex;
 	align-items: center;
 
-	border-radius: 0px $border-radius $border-radius 0px; // bottom and top left
+	//border-radius: 0px $border-radius $border-radius 0px; // bottom and top left
 
 	color: $grey;
 }
@@ -135,6 +135,10 @@ $info-padding: 140px;
 .headerTitleContact li b{
 	margin-right: 5px;
 	font-weight: 400;
+}
+.headerTitle > a{
+	background-color: rgba($dark-blue, 0.9);
+	padding-right: 15px;
 }
 .blurHider{
 	width: 100%;

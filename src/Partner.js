@@ -27,7 +27,7 @@ class Partner extends Component {
 
   componentDidMount() {
 
-    let dataURL = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/nyhetsmedia?slug=" + this.state.slug + "&_embed";
+    let dataURL = "http://localhost/Projects/ostmedia-complete/backend/wp-json/wp/v2/nyhetsmedia?slug=" + this.state.slug + "&_embed";
     fetch(dataURL)
       .then(res => res.json())
       .then(res => {
@@ -36,7 +36,7 @@ class Partner extends Component {
         })
     })
 
-    let cardDataUrl = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/contactcard?per_page=50";
+    let cardDataUrl = "http://localhost/Projects/ostmedia-complete/backend/wp-json/wp/v2/contactcard?per_page=50";
     fetch(cardDataUrl)
       .then(res => res.json())
       .then(res => {
@@ -100,10 +100,13 @@ class Partner extends Component {
             <div className={styles.headerTitle} >
               {title}
               {headerCard}
+              <AnchorLink to="#cards"> 
+                <FontAwesomeIcon icon={["fas", "angle-down"]} size="lg" color="white" className={splash.scroll} />
+              </AnchorLink>
             </div>
           </max>
         </div>
-        <div className={styles.cardsContainer} >
+        <div className={styles.cardsContainer} id="cards" >
           {contactCards}
 
         </div>

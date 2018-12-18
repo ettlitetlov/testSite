@@ -24,7 +24,7 @@ class Partners extends Component {
 
 
   componentDidMount() {
-    let dataURL = "http://localhost/Projects/ostmedia-wordpress/wp-json/wp/v2/nyhetsmedia?_fields=acf";
+    let dataURL = "http://localhost/Projects/ostmedia-complete/backend/wp-json/acf/V3/nyhetsmedia?_fields=acf";
     fetch(dataURL)
       .then(res => res.json())
       .then(res => {
@@ -42,7 +42,7 @@ class Partners extends Component {
     const partners = this.state.partners.map((nyhetsmedia, i) => {
       //remove spaces and replace with -. Also covert to lowercase
       const link = url + "/" + nyhetsmedia.acf.name.toLowerCase().replace(/\s/g, "-");
-      return <PartnersCard title={nyhetsmedia.acf.name} link={link} icon={nyhetsmedia.acf.logo.url} />
+      return <PartnersCard title={nyhetsmedia.acf.name} link={link} icon={nyhetsmedia.acf.logo.url} order={nyhetsmedia.acf.order} />
     });
 
 

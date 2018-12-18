@@ -73,14 +73,17 @@
 .cardInfo{
 	padding: 15px 0;
 }
+.cardDescription{
 
+}
 .cardItem{
 	display: flex;
 	align-items: center;
-	padding: 5px 0;
+	padding: 12px 0;
 }
 .cardItem p{
 	color: $dark;
+	margin: 0;
 }
 .cardItem a{
 	color: $dark;
