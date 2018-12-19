@@ -36,7 +36,7 @@ class Partner extends Component {
         })
     })
 
-    let cardDataUrl = "http://localhost/Projects/ostmedia-complete/backend/wp-json/wp/v2/contactcard?per_page=50";
+    let cardDataUrl = "http://localhost/Projects/ostmedia-complete/backend/wp-json/wp/v2/contactcard?per_page=100";
     fetch(cardDataUrl)
       .then(res => res.json())
       .then(res => {
@@ -59,12 +59,13 @@ class Partner extends Component {
 
 
     const headerCard = this.state.partnerData.map((data,i) => {
+      let mailto = "mailto:" + data.acf.mail;
       return <div className={styles.headerTitleContact}>
               <ul>
                 <li><b>Telefon:</b> {data.acf.phone}</li>
                 <li><b>Öppettider mån-fre:</b> {data.acf.openhours}</li>
-                <li><b>Besöksaddress:</b> {data.acf.address}</li>
-                <li><b>E-post:</b> {data.acf.mail}</li>
+                <li><b>Besöksaddress:</b>{data.acf.address}</li>
+                <li><b>E-post:</b> <a href={mailto}>{data.acf.mail}</a></li>
               </ul>
              </div>
     });

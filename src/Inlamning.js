@@ -46,7 +46,7 @@ class Inlamning extends Component {
         <div className={splash.description} id="description">
           <max>
             <h5 className={splash.descriptionText}>
-              Här hittar du info om hur du levererar material till din bokade annons. Om du inte bokat ännu gör du det först via din ordinarie kontakta hos oss. Saknar du kontaktperson? Kontakta <a href="mailto:hej@ostmedia.se">hej@ostmedia.se</a> så hjälper vi dig.
+              Här hittar du info om hur du levererar material till din bokade annons. Om du inte bokat ännu gör du det först via din ordinarie kontakta hos oss. Saknar du kontaktperson? Kontakta <a href="mailto:foretagsannons@ostmedia.se">foretagsannons@ostmedia.se</a> så hjälper vi dig.
             </h5>
           </max>
         </div>

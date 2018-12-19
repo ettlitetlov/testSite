@@ -16,7 +16,7 @@ class ContactInfoCard extends Component {
 
   componentDidMount(){
 
-    let cardDataUrl = "http://localhost/Projects/ostmedia-complete/backend/wp-json/acf/V3/contactcard_section?per_page=50";
+    let cardDataUrl = "http://localhost/Projects/ostmedia-complete/backend/wp-json/acf/V3/contactcard_section?per_page=100";
     fetch(cardDataUrl)
       .then(res => res.json())
       .then(res => {
@@ -39,7 +39,8 @@ class ContactInfoCard extends Component {
           phone = <li>Telefon: <b>{data.acf.phone}</b></li>; 
         }
         if(data.acf.mail) {
-          mail = <li>E-post: <b>{data.acf.mail}</b></li>;
+          let mailto = "mailto:" + data.acf.mail + "";
+          mail = <li>E-post: <b><a href={mailto}> {data.acf.mail}</a></b></li>;
         }
         return <div className={styles.section} >
                   <h4>{data.acf.title}</h4>

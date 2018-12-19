@@ -132,9 +132,14 @@ $info-padding: 140px;
 	display: flex;
 	align-items: center;
 }
-.headerTitleContact li b{
+.headerTitleContact li b,.headerTitleContact li a{
 	margin-right: 5px;
 	font-weight: 400;
+	text-decoration: none;
+	color: $dark;
+}
+.headerTitleContact li a:hover{
+	color: $primary;
 }
 .headerTitle > a{
 	background-color: rgba($dark-blue, 0.9);

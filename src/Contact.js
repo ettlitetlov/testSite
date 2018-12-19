@@ -30,7 +30,7 @@ class Contact extends Component {
 							</div>
 							<div className={styles.cardItem} >
 								<div className={styles.cardIcon} id={styles.mail} ></div>
-								<a href="mailto:hej@ostmedia.se">hej@ostmedia.se</a>
+								<a href="mailto:foretagsannons@ostmedia.se">foretagsannons@ostmedia.se</a>
 							</div>
 						</div>
 					</div>
