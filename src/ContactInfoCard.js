@@ -10,13 +10,14 @@ class ContactInfoCard extends Component {
     super(props);
   
     this.state = {
-      cardData: []
+      cardData: [],
+      wpRestUrl: "http://localhost/Projects/ostmedia-complete/backend/wp-json/acf/V3/"
     };
   }
 
   componentDidMount(){
 
-    let cardDataUrl = "http://localhost/Projects/ostmedia-complete/backend/wp-json/acf/V3/contactcard_section?per_page=100";
+    let cardDataUrl = this.state.wpRestUrl + "contactcard_section?per_page=100";
     fetch(cardDataUrl)
       .then(res => res.json())
       .then(res => {

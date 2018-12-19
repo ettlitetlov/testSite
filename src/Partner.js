@@ -21,13 +21,14 @@ class Partner extends Component {
       title: "",
       partnerData: [],
       cardData: [],
+      wpRestUrl: "http://localhost/Projects/ostmedia-complete/backend/wp-json/wp/v2/",
       slug: this.props.match.params.name
     };
   }
 
   componentDidMount() {
 
-    let dataURL = "http://localhost/Projects/ostmedia-complete/backend/wp-json/wp/v2/nyhetsmedia?slug=" + this.state.slug + "&_embed";
+    let dataURL = this.state.wpRestUrl + "nyhetsmedia?slug=" + this.state.slug + "&_embed";
     fetch(dataURL)
       .then(res => res.json())
       .then(res => {
@@ -36,7 +37,7 @@ class Partner extends Component {
         })
     })
 
-    let cardDataUrl = "http://localhost/Projects/ostmedia-complete/backend/wp-json/wp/v2/contactcard?per_page=100";
+    let cardDataUrl = this.state.wpRestUrl + "contactcard?per_page=100";
     fetch(cardDataUrl)
       .then(res => res.json())
       .then(res => {
