@@ -106,23 +106,49 @@ video{
 	text-align: center;
 }
 
-.rotate-enter{
-	opacity: 0.01;
-	transform: rotateY(-180deg);
-	transition: all ease-out 0.3s;
+
+@media (max-width: (50 + $md1)) {
+
+	.headerText {
+		width: 450px;
+	}
+	.headerText h1{
+		font-size: 45px;
+		margin-bottom: 5px;
+	}
+
 }
-.rotate-enter-done{
-	opacity: 1;
-	transform: rotateY(0deg);
-	transition: all ease-out 0.3s;
+
+@media (max-width: (50 + $sm)) {
+
+	.headerText{
+		width: 80%;
+	}
+	.headerText h1{
+		font-size: 8vw;
+		margin-bottom: 20px;
+	}
+	.headerText h1::after{
+		//content: '';
+		display: block;
+		width: 98%;
+		margin: 15px auto;
+		height: 1px;
+		background-color: white;
+	}
+	.headerText h4{
+		font-size: 3.5vw;
+		line-height: normal;
+		text-align: left;
+	}
 }
-.rotate-enter-active{
-	opacity: 1;
-	transform: rotateY(0deg);
-	transition: all ease-out 0.3s;
-}
-.rotate-exit-active{
-	opacity: 1;
-	transform: rotateY(0deg);
-	transition: all ease-out 0.3s;
+
+@media (max-width: (50 + $sm)) {
+
+
+	.headerText h4{
+		font-size: 4vw;
+	}
+
+
 }

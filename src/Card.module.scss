@@ -4,12 +4,17 @@
 $list-icon-margin: 8px;
 $list-icon-hover-padding: 3px;
 
+$min-width: 170px;
+$max-width: ($min-width + 10);
+$card-padding-x: 40px;
+$card-padding-y: 40px;
+
 .card{
 	min-width: 170px;
 	max-width: 180px;
 	display: flex;
 	flex-flow: column;
-	padding: 40px;
+	padding: $card-padding-x;
 	margin: $card-margin;
 
 	background-color: white;
@@ -103,4 +108,71 @@ $list-icon-hover-padding: 3px;
 }
 .cardText a:visited{
 	color: $grey;
+}
+
+@media (max-width: (50 + $md1)) {
+
+	$min-width: 150px;
+	$max-width: ($min-width + 10);
+	
+	.card{
+		min-width: $min-width;
+		max-width: $max-width;
+		margin: 4px 2px;
+	}
+	.cardIcon img{
+		width: 85%;
+	}
+
+}
+
+// break from two column tow one column
+@media (max-width: 578px) {
+
+	$min-width: 200px;
+	$max-width: ($min-width + 10);
+
+	.card{
+		margin: $card-margin 0;
+
+		min-width: $min-width;
+		max-width: $max-width;
+	}
+
+
+}
+
+@media (max-width: (50 + $sm)) {
+
+
+	$max-width: 50%;
+
+	.card{
+		margin: $card-margin 0;
+		max-width: $max-width;
+	}
+	.cardIcon img{
+		width: 65%;
+	}
+
+}
+
+@media (max-width: (50 + $xs)) {
+
+
+	$max-width: 70%;
+	$card-padding-x: 40px;
+
+	.card{
+		margin: $card-margin 0;
+		max-width: 10px;
+		padding: $card-padding-y $card-padding-x;
+	}
+	.cardIcon{
+		padding-bottom: 20px;
+	}
+	.cardIcon img{
+		width: 55%;
+	}
+
 }

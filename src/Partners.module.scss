@@ -1,6 +1,29 @@
 @import './variables.scss';
 
 .cardContainer{
-	justify-content: flex-start !important;
-	flex: 1 1 $partner-card-width !important;
+	justify-content: flex-start ;
+	flex: 1 1 $partner-card-width ;
+}
+.cardMaxContainer{
+	display: flex;
+	justify-content: center;
+}
+
+@media (max-width: (50 + $lg)) {
+
+	.cardContainer{
+		justify-content: space-between;
+	}
+
+}
+
+@media (max-width: (50 + $md1)) {
+
+	$partner-card-width: 150px;
+
+	.cardContainer{
+		flex: 1 1 $partner-card-width ;
+		justify-content: center;
+		padding: 10% 0;
+	}
 }

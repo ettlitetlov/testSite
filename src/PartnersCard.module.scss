@@ -40,3 +40,29 @@ $card-width-reduction: 20px; //used for responsiveness flexibility
 	padding: 0;
 	word-break: word-break;
 }
+
+@media (max-width: (50 + $md1)) {
+
+	$partner-card-width: 280px;
+
+	$icon-padding: 20px;
+	$titlepadding: 90px;
+	$card-height: 100px;
+
+	$card-width-reduction: 0px;
+
+	.card{
+		margin: 10px;
+		min-width: $partner-card-width;
+		max-width: $partner-card-width;
+		height: $card-height;
+	}
+
+	.title h3{
+		font-size: 20px;
+	}
+	.cardIcon{
+		width: calc(#{$card-height} - #{$card-width-reduction} - #{$icon-padding});
+		padding: $icon-padding;
+	}
+}

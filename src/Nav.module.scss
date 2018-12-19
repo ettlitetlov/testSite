@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 $padding-x: 60px;
 $padding-y: 40px;
 
@@ -30,4 +32,28 @@ $padding-y: 40px;
 .logo:hover{
 
 	width: 103px;
+}
+
+@media (max-width: (50 + $md1)) {
+
+	$padding-x: 20px;
+	$padding-t: 20px;
+
+	.nav{
+		width: calc(100% - 2*#{$padding-x});
+		padding: $padding-y $padding-x;
+	}
+
+}
+
+@media (max-width: (50 + $sm)) {
+
+	.logo{
+		height: 40px;
+		width: 80px;
+	}
+	.logo:hover{
+		width: 83px;
+	}
+
 }

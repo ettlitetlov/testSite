@@ -51,7 +51,27 @@ max {
 @media (max-width: (50 + $md1)) {
 
 	max {
-		max-width: $sm;
+		max-width: ($md1 - 100);
+	}
+
+
+
+}
+
+@media (max-width: 750px) {
+
+	max {
+		max-width: 85%;
+	}
+
+
+
+}
+
+@media (max-width: (50 + $sm)) {
+
+	max {
+		max-width: 90%;
 	}
 
 }

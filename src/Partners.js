@@ -65,7 +65,7 @@ class Partners extends Component {
             <h5 className={splash.descriptionText}> Här hittar du all information och kontaktuppgifter till våra nyhetsmedier</h5>
           </max>
         </div>
-        <max>
+        <max className={styles.cardMaxContainer} >
           <div className={[styles.cardContainer, splash.cardContainer].join(' ')}>
             {partners}
             

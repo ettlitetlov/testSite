@@ -3,7 +3,7 @@
 .link {
 	display: block;
 	font-family: 'Open Sans';
-	color: rgba($white, 0.9);
+	color: rgba($white, 1);
 	text-decoration: none;
 	font-weight: 500;
 	padding: 10px 0 ;
@@ -15,5 +15,15 @@
 
 .link:hover{
 	border-bottom: 2px solid $primary;
-	color: $white;
+	color: white;
+}
+
+
+@media (max-width: (50 + $sm)) {
+
+	.link{
+		font-size: 3vw;
+		margin: 0 15px;
+	}
+
 }
