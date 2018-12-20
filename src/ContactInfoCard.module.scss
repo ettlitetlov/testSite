@@ -1,7 +1,11 @@
 @import './variables.scss';
 
 $card-outer-padding-x: 60px;
+$card-outer-padding-y: 40px;
 $card-inner-padding-x: 20px;
+
+$text-padding-y: 30px;
+
 
 .card{
 	//hack to make background change in the middle
@@ -13,7 +17,7 @@ $card-inner-padding-x: 20px;
 .cardContent{
 	max-width: 60%;
 	min-height: 280px;
-	padding: 40px $card-inner-padding-x;
+	padding: $card-outer-padding-y $card-inner-padding-x;
 	padding-right: $card-outer-padding-x;
 	background-color: $white;
 	border-radius: 5px;
@@ -41,11 +45,11 @@ $card-inner-padding-x: 20px;
 .text{
 	display: flex;
 	flex-flow: row wrap;
-	padding-top: 30px;
+	padding-top: $text-padding-y;
 }
 .section{
 	margin-right: 40px;
-	padding-bottom: 30px;
+	padding-bottom: $text-padding-y;
 }
 .section:nth-last-child(n + 2):nth-child(n){
 	min-width: 300px;
@@ -64,14 +68,15 @@ $card-inner-padding-x: 20px;
 	list-style-type: none;
 }
 .section li{
-	padding: 5px 0;
+	padding: 10px 0;
 	font-weight: 100;
 }
 .section li b,.section li a{
-	padding: 5px 0;
+	padding: 0;
 	font-weight: 400;
 	text-decoration: none;
 	color: $dark;
+	word-break: break-word;
 }
 .section li a:hover{
 	color: $primary;
@@ -93,4 +98,224 @@ $card-inner-padding-x: 20px;
 	padding-left: (40 + $card-outer-padding-x); //to fit the dot
 	padding-right: $card-inner-padding-x;
 	min-width: 300px;
+}
+
+@media (max-width: (50 + $md1)) {
+
+	$text-padding-y: 20px;
+	$card-outer-padding-x: 40px;
+
+	.card{
+		background: none;
+		margin-bottom: 50px;
+	}
+	.card > max{
+		display: flex;
+		justify-content: center;
+	}
+	.cardContent{
+		padding: $card-outer-padding-y $card-outer-padding-x;
+		padding-left: ($card-outer-padding-x);
+
+		width: calc(100% - 2*#{$card-outer-padding-x});
+		max-width: none;
+	}
+
+	//remove overwrites for even cards
+	.card:nth-child(even){
+		background: none;
+	}
+	.card:nth-child(even) .cardContent{
+		padding: $card-outer-padding-y $card-outer-padding-x;
+		padding-left: ($card-outer-padding-x);
+
+		width: calc(100% - 2*#{$card-outer-padding-x});
+		max-width: none;
+		min-width: 0;
+	}
+	.card:nth-child(even) max{
+		justify-content: center;
+	}
+
+	// Typography
+	.cardContent h2{
+		font-size: 40px;
+		margin-left: 0;
+	}
+	.cardContent h2::before{
+		display: none;
+	}
+	.text{
+		padding-top: $text-padding-y;
+	}
+	.section{
+		padding-bottom: $text-padding-y;
+		margin-right: 10px;
+	}
+	.section h4{
+		font-size: 20px;
+		margin-bottom: 0;
+	}
+	.section li{
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: flex-start;
+		margin-left: 0;
+	}
+	.section li b{
+		margin-left: 3px;
+	}
+	.description{
+		font-size: 14px;
+		word-break: break-word;
+	}
+	.section:nth-last-child(n + 2):nth-child(n){
+		min-width: 200px;
+		max-width: 200px;
+	}
+
+}
+
+@media (max-width: (50 + $sm)) {
+
+	$text-padding-y: 20px;
+	$card-outer-padding-x: 40px;
+
+	.card{
+		background: none;
+		margin-bottom: 50px;
+	}
+	.card > max{
+		display: flex;
+		justify-content: center;
+	}
+	.cardContent{
+		padding: $card-outer-padding-y $card-outer-padding-x;
+		padding-left: ($card-outer-padding-x);
+
+		width: calc(100% - 2*#{$card-outer-padding-x});
+		max-width: none;
+	}
+
+	//remove overwrites for even cards
+	.card:nth-child(even){
+		background: none;
+	}
+	.card:nth-child(even) .cardContent{
+		padding: $card-outer-padding-y $card-outer-padding-x;
+		padding-left: ($card-outer-padding-x);
+
+		width: calc(100% - 2*#{$card-outer-padding-x});
+		max-width: none;
+	}
+	.card:nth-child(even) max{
+		justify-content: center;
+	}
+
+	// Typography
+	.cardContent h2{
+		font-size: 30px;
+		margin-left: 0;
+	}
+	.cardContent h2::before{
+		display: none;
+	}
+	.text{
+		padding-top: $text-padding-y;
+	}
+	.section{
+		padding-bottom: $text-padding-y;
+		margin-right: 10px;
+		min-width: 0;
+	}
+	.section h4{
+		font-size: 18px;
+		margin-bottom: 2px;
+	}
+	.section ul{
+
+	}
+	.section li{
+		margin-left: 0;
+		align-items: flex-start;
+		padding: 3px 0;
+		font-size: 14px;
+	}
+	.section li b, .section li a{
+		margin-left: 4px;
+		font-size: 14px;
+		padding: 0;
+		word-break: break-all;
+	}
+	.description{
+		font-size: 14px;
+	}
+	.section:nth-last-child(n + 2):nth-child(n){
+		min-width: 270px;
+		max-width: fit-content;
+	}
+
+}
+
+@media (max-width: (50 + $xs)) {
+
+	$text-padding-y: 20px;
+	$card-outer-padding-x: 30px;
+
+	.card{
+		background: none;
+		margin-bottom: 50px;
+	}
+	.cardContent{
+		padding: $card-outer-padding-y $card-outer-padding-x;
+		padding-left: ($card-outer-padding-x);
+
+		width: calc(100% - 2*#{$card-outer-padding-x});
+	}
+	.card:nth-child(even) .cardContent{
+		padding: $card-outer-padding-y $card-outer-padding-x;
+		padding-left: ($card-outer-padding-x);
+
+		width: calc(100% - 2*#{$card-outer-padding-x});
+	}
+
+	// Typography
+	.cardContent h2{
+		font-size: 25px;
+		margin-left: 0;
+	}
+	.cardContent h2::before{
+		display: none;
+	}
+	.text{
+		padding-top: $text-padding-y;
+	}
+	.section{
+		padding-bottom: $text-padding-y;
+		margin-right: 10px;
+	}
+	.section h4{
+		font-size: 17px;
+		margin-bottom: 2px;
+	}
+	.section li{
+		margin-left: 0;
+		align-items: flex-start;
+		padding: 3px 0;
+
+		font-size: 14px;
+	}
+	.section li b, .section li a{
+		margin-left: 3px;
+		font-size: 14px;
+		padding: 0;
+	}
+	.description{
+		font-size: 14px;
+	}
+	.section:nth-last-child(n + 2):nth-child(n){
+		min-width: 0;
+		max-width: fit-content;
+	}
+
 }

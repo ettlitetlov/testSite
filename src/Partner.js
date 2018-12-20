@@ -28,7 +28,7 @@ class Partner extends Component {
 
   componentDidMount() {
 
-    let dataURL = this.state.wpRestUrl + "nyhetsmedia?slug=" + this.state.slug + "&_embed";
+    let dataURL = this.state.wpRestUrl + "nyhetsmedia?slug=" + this.state.slug + "&_embed&per_page=100";
     fetch(dataURL)
       .then(res => res.json())
       .then(res => {
@@ -66,7 +66,7 @@ class Partner extends Component {
                 <li><b>Telefon:</b> {data.acf.phone}</li>
                 <li><b>Öppettider mån-fre:</b> {data.acf.openhours}</li>
                 <li><b>Besöksaddress:</b>{data.acf.address}</li>
-                <li><b>E-post:</b> <a href={mailto}>{data.acf.mail}</a></li>
+                <li><b>Epost:</b> <a href={mailto}>{data.acf.mail}</a></li>
               </ul>
              </div>
     });

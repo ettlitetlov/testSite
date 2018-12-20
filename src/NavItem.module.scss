@@ -22,7 +22,9 @@
 @media (max-width: (50 + $sm)) {
 
 	.link{
-		font-size: 3vw;
+		padding-bottom: 2px;
+		margin-bottom: -2px;
+		font-size: 3.3vw;
 		margin: 0 15px;
 	}
 

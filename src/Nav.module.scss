@@ -43,6 +43,9 @@ $padding-y: 40px;
 		width: calc(100% - 2*#{$padding-x});
 		padding: $padding-y $padding-x;
 	}
+	.logo{
+		margin-left: 40px;
+	}
 
 }
 
@@ -51,9 +54,18 @@ $padding-y: 40px;
 	.logo{
 		height: 40px;
 		width: 80px;
+		margin-left: 10px;
 	}
 	.logo:hover{
 		width: 83px;
+	}
+
+}
+
+@media (max-width: (50 + $xs)) {
+
+	.logo{
+		margin-left: 7px;
 	}
 
 }

@@ -126,7 +126,7 @@ $title-line-width: 3.5px;
 	text-decoration: none;
 }
 .descriptionText a[href*="mailto"]:hover{
-	text-decoration: underline;
+	color: lighten($primary, 10%);
 }
 .descriptionAlt{
 	height: $splash-description-height;
@@ -270,8 +270,7 @@ $title-line-width: 3.5px;
 	 .description, .descriptionAlt, .small .description,.small .descriptionAlt{
 	 	height: auto !important;
 		background-color: $primary;
-		padding: 0;
-		padding-bottom: 20px;
+		padding: 20px 0;
 	}
 	 .splash::before, .small .splash::before{
 		height: $tiny-splash-height !important;
@@ -287,7 +286,7 @@ $title-line-width: 3.5px;
 	}
 	 .title{
 		text-shadow: none;
-		margin-bottom: 10px;
+		margin-bottom: 0;
 		padding-bottom: 0;
 	}
 	 .title:before{

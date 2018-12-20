@@ -41,7 +41,7 @@ class ContactInfoCard extends Component {
         }
         if(data.acf.mail) {
           let mailto = "mailto:" + data.acf.mail + "";
-          mail = <li>E-post: <b><a href={mailto}> {data.acf.mail}</a></b></li>;
+          mail = <li>Epost:<b><a href={mailto}> {data.acf.mail}</a></b></li>;
         }
         return <div className={styles.section} >
                   <h4>{data.acf.title}</h4>

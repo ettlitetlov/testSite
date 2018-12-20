@@ -8,7 +8,7 @@ $header-padding-bottom: 15vh;
 $header-blur-width: 45; 
 $header-normal-width: (100 - $header-blur-width);
 
-$border-radius: 4px;
+$border-radius: 2px;
 $title-padding-y: 30px;
 $title-padding-x: 50px;
 
@@ -91,6 +91,7 @@ $info-padding: 140px;
 .headerTitle{
 	display: flex;
 	margin-bottom: $header-padding-bottom;
+	width: fit-content;
 }
 .headerTitle h1{
 	margin: 0;
@@ -113,8 +114,6 @@ $info-padding: 140px;
 	background-color: rgba(white, 1);
 	display: flex;
 	align-items: center;
-
-	//border-radius: 0px $border-radius $border-radius 0px; // bottom and top left
 
 	color: $grey;
 }
@@ -144,6 +143,7 @@ $info-padding: 140px;
 .headerTitle > a{
 	background-color: rgba($dark-blue, 0.9);
 	padding-right: 15px;
+	border-radius: 0px $border-radius $border-radius 0px; // bottom and top left
 }
 .blurHider{
 	width: 100%;
@@ -162,4 +162,155 @@ $info-padding: 140px;
 
 	display: flex;
 	flex-flow: column wrap;
+}
+
+@media (max-width: (50 + $lg)) {
+
+	.header > max{
+		display: flex;
+		justify-content: center;
+	}
+
+	.headerTitle h1{
+		max-width: 350px;
+		font-size: 40px;
+	}
+
+}
+
+@media (max-width: (50 + $md2)) {
+
+	.headerTitle{
+		width: 100%;
+	}
+	.headerTitle h1{
+		max-width: fit-content;
+	}
+	.headerTitleContact{
+		max-width: fit-content;
+	}
+	.headerTitleContact li{
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: flex-start;
+	}
+	.headerTitleContact li, .headerTitleContact li a, .headerTitleContact li b {
+		word-break: keep-all;
+		hyphens: none;
+	} 
+
+}
+
+@media (max-width: (50 + $md1)) {
+
+	$title-padding-x: 40px;
+	$title-padding-y: 30px;
+	$button-width: 50px;
+	$title-h1-width: 320px;
+
+	.headerTitle{
+		flex-flow: row wrap;
+		margin-bottom: 70px;
+	}
+	.headerTitle h1{
+		order: 1;
+		width: $title-h1-width;
+		padding: $title-padding-y $title-padding-x;
+		border-radius: $border-radius 0 $border-radius 0px;
+	}
+	.headerTitleContact{
+		order: 4;
+		max-width: none;
+		width: ($title-h1-width + $button-width);
+		padding: $title-padding-y $title-padding-x;
+		border-radius: 0 0 $border-radius $border-radius;
+	}
+	.headerTitle > a{
+		order: 2;
+		display: flex;
+		justify-content: center;
+		width: 50px;
+		padding-top: 10px;
+		padding-right: 0;
+		border-radius: 0 $border-radius 0 0
+	}
+	.headerTitle > a > svg{
+		margin: 0;
+	}
+	//force line break
+	.headerTitle::before{
+		content: '';
+		display: block;
+		width: 600px;
+		height: 0px;
+		order: 3;
+	}
+	.headerTitleContact li{
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: flex-start;
+	}
+	.headerTitleContact li, .headerTitleContact li a, .headerTitleContact li b {
+		word-break: keep-all;
+		hyphens: none;
+	}
+
+	.cardsContainer{
+		padding: 50px 0;
+	}
+
+}
+
+//special
+@media (max-width: (700px)) {
+
+	$title-h1-width: 100%;
+	$button-width: 50px;
+	$title-padding-x: 40px;
+	$title-padding-y: 30px;
+
+	.headerTitle{
+		justify-content: center;
+	}
+	.headerTitle h1{
+		width: calc(#{$title-h1-width} - 2*#{$title-padding-x} - #{$button-width} );
+		max-width: none;
+	}
+	.headerTitleContact{
+		width: calc(#{$title-h1-width} - 2*#{$title-padding-x});	
+	}
+
+}
+
+@media (max-width: ($sm + 50)) {
+
+	$title-h1-width: 100%;
+	$button-width: 50px;
+	$title-padding-x: 20px;
+	$title-padding-y: 30px;
+
+	.headerTitle{
+		justify-content: center;
+	}
+	.headerTitle h1{
+		padding: $title-padding-y $title-padding-x;
+		width: calc(#{$title-h1-width} - 2*#{$title-padding-x} - #{$button-width} );
+		font-size: 30px;
+	}
+	.headerTitleContact{
+		padding: $title-padding-y $title-padding-x;
+		width: calc(#{$title-h1-width} - 2*#{$title-padding-x});	
+	}
+
+}
+
+@media (max-width: (50 + $xs)) {
+
+	.headerTitle h1{
+		font-size: 25px;
+	}
+	.headerTitleContact li{
+		font-size: 14px;
+	}
+
 }

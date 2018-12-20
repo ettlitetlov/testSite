@@ -66,3 +66,31 @@ $card-width-reduction: 20px; //used for responsiveness flexibility
 		padding: $icon-padding;
 	}
 }
+
+@media (max-width: (50 + $sm)) {
+
+	$partner-card-width: 85%;
+
+	$icon-padding: 20px;
+	$titlepadding: 90px;
+	$card-height: 100px;
+
+	$card-width-reduction: 0px;
+
+	.card{
+		min-width: $partner-card-width;
+		max-width: $partner-card-width;
+	}
+	.cardIcon{
+		width: calc(#{$card-height} - #{$card-width-reduction} - #{$icon-padding});
+		padding: $icon-padding;
+	}
+}
+
+@media (max-width: (50 + $xs)) {
+
+	.title h3{
+		font-size: 18px;
+		word-break: break-word;
+	}
+}

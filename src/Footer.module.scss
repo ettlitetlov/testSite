@@ -51,5 +51,18 @@ footer{
 
 	.logoContainer{
 		width: 80%;
+		padding-top: 20px;
+	}
+	footer{
+		min-height: 10vh;
+		padding-top: 10px;
+	}
+}
+
+//special
+@media (max-width: (410px)) {
+
+	.slogan{
+		margin-bottom: 15px;
 	}
 }
