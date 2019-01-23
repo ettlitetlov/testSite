@@ -21,7 +21,7 @@ class Partner extends Component {
       title: "",
       partnerData: [],
       cardData: [],
-      wpRestUrl: "http://localhost/Projects/ostmedia-complete/backend/wp-json/wp/v2/",
+      wpRestUrl: "http://api.ostmedia.se/wp-json/wp/v2/",
       slug: this.props.match.params.name
     };
   }
@@ -79,8 +79,8 @@ class Partner extends Component {
     const contactCards = this.state.cardData.map((card,i) => {
       
       //remove spaces and replace with -. Also covert to lowercase
-      const dataTitle = card.acf.parent_nyhetsmedie.post_title.toLowerCase().replace(/\s/g, "-");
-      console.log(dataTitle == this.state.slug);
+      // + EDIT: Added second replace to fix error when having a / in the slug.
+      const dataTitle = card.acf.parent_nyhetsmedie.post_title.toLowerCase().replace(/\s/g, "-").replace(/\/.*/g,'');
       if (dataTitle == this.state.slug){
         return <ContactInfoCard
                   key={card.id}

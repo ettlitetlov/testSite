@@ -24,7 +24,7 @@ class Partners extends Component {
 
 
   componentDidMount() {
-    let dataURL = "http://localhost/Projects/ostmedia-complete/backend/wp-json/acf/V3/nyhetsmedia?_fields=acf";
+    let dataURL = "http://api.ostmedia.se/wp-json/wp/v2/nyhetsmedia?_fields=acf";
     fetch(dataURL)
       .then(res => res.json())
       .then(res => {
@@ -36,7 +36,7 @@ class Partners extends Component {
 
 
   render() {
-
+    console.log("Blihblah")
     const url = this.props.match.url;
 
     const partners = this.state.partners.map((nyhetsmedia, i) => {
@@ -62,7 +62,7 @@ class Partners extends Component {
         </div>
         <div className={splash.description} id="description">
           <max>
-            <h5 className={splash.descriptionText}> Här hittar du all information och kontaktuppgifter till våra nyhetsmedier</h5>
+            <h5 className={splash.descriptionText}> Vi är aldrig mer än ett telefonsamtal eller mail bort. Här hittar du alla uppgifter du behöver för att nå oss och vi ser fram emot att höra från dig.</h5>
           </max>
         </div>
         <max className={styles.cardMaxContainer} >

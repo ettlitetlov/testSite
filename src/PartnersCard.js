@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class PartnersCard extends Component {
   render() { 
 
-    console.log(this.props.order);
-
     const css_order = {
       order: this.props.order
     };
