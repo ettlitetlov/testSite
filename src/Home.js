@@ -1,3 +1,4 @@
+import 'react-app-polyfill/ie9';
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Home.module.scss';
