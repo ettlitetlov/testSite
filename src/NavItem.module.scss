@@ -3,7 +3,7 @@
 .link {
 	display: block;
 	font-family: 'Open Sans';
-	color: rgba($white, 1);
+	color: white;
 	text-decoration: none;
 	font-weight: 500;
 	padding: 10px 0 ;
@@ -26,6 +26,7 @@
 		margin-bottom: -2px;
 		font-size: 3.3vw;
 		margin: 0 15px;
+		font-family: 'Open Sans';
 	}
 
 }

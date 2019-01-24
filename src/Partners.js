@@ -36,7 +36,6 @@ class Partners extends Component {
 
 
   render() {
-    console.log("Blihblah")
     const url = this.props.match.url;
 
     const partners = this.state.partners.map((nyhetsmedia, i) => {

@@ -18,6 +18,23 @@ $padding-y: 40px;
 
 	z-index: 20;
 }
+
+@media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+    // IE9+ CSS
+    .nav { 
+		justify-content: flex-start;
+		align-items: flex-end;
+	
+		position: absolute;
+		top: 0;
+	
+		z-index: 20;
+	}
+
+	.logo{
+
+	}
+}
 .logo{
 	margin-right: auto;
 	height: 60px;

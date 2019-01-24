@@ -69,8 +69,8 @@ video{
 	height: 100%;
 
 	min-height: 100vh;
-
-	max-height: 100vh;
+	
+	//max-height: 100vh;
 
 	object-fit: cover;
 	
@@ -96,6 +96,8 @@ video{
 	font-weight: 100;
 	margin: 0;
 	margin-bottom: 20px;
+	font-family: "Open Sans";
+	text-shadow: 2px 2px 4px black;
 }
 .headerText h4{
 	font-size: 18px;
@@ -103,7 +105,11 @@ video{
 	word-spacing: 3px;
 	line-height: 30px;
 	margin: 0;
+	max-width: 670px;
 	text-align: center;
+	font-family: "Open Sans";
+	color: white;
+	text-shadow: 1px 1px 3px black;
 }
 
 
