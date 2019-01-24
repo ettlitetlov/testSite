@@ -19,20 +19,29 @@ $info-padding: 140px;
 
 	display: flex;
 	align-items: flex-end;
+	float: center;
 	z-index: 5;
 }
 .headerBg{
 	position: absolute;
-	width: 100%;
-
+	min-width: 100%;
 	height: $header-height;
 	background-color: #eaeaea;
 	background-size: cover;
+	float: top;
 	background-repeat: no-repeat;
 	background-position: 50% 20%;
 	filter: brightness(90%);
 
 	transition: all ease-in 0.1s;
+}
+
+@media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+    // IE9+ CSS
+    .headerBg{
+		margin-top: -100vh;
+
+	}
 }
 /*.header::before{
 	content: '';

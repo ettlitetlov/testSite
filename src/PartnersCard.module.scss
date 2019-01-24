@@ -25,12 +25,12 @@ $card-width-reduction: 20px; //used for responsiveness flexibility
 	color: $grey;
 }
 .cardIcon{
-	width: calc(#{$card-height} - #{$card-width-reduction} - #{$icon-padding});
+	max-width: calc(#{$card-height} - #{$card-width-reduction} - #{$icon-padding});
 	padding: $icon-padding;
 	object-fit: contain;
 }
 .title{
-	display: flex;
+	display: flex-end;
 	flex-flow: column;
 	justify-content: center;
 }
