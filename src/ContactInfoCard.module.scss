@@ -11,12 +11,12 @@ $text-padding-y: 30px;
 	//hack to make background change in the middle
 	background: linear-gradient(to right, $white, $white 49%, transparent 51%, transparent 100%);
 	margin-bottom: 150px;
-	height: fit-content;
+	height: min-content;
 
 }
 .cardContent{
 	max-width: 60%;
-	min-height: 280px;
+	min-height: 359.5px;
 	padding: $card-outer-padding-y $card-inner-padding-x;
 	padding-right: $card-outer-padding-x;
 	background-color: $white;

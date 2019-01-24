@@ -11,7 +11,7 @@ class ContactInfoCard extends Component {
   
     this.state = {
       cardData: [],
-      wpRestUrl: "http://localhost/Projects/ostmedia-complete/backend/wp-json/acf/V3/"
+      wpRestUrl: "http://api.ostmedia.se/wp-json/wp/v2/"
     };
   }
 
@@ -30,9 +30,11 @@ class ContactInfoCard extends Component {
   render() {
 
     let sections = this.state.cardData.map((data, i) => {
-      //console.log(this.props.fullName, data.acf.parent_contactcard.post_title);
+      //console.log(this.props.fullName == data.acf.parent_contactcard.post_title, this.props.fullName, data.acf.parent_contactcard.post_title);
       let phone = "";
       let mail = "";
+      let webb = "";
+
       if (this.props.fullName == data.acf.parent_contactcard.post_title) {
         
         if(data.acf.phone) {
@@ -43,11 +45,16 @@ class ContactInfoCard extends Component {
           let mailto = "mailto:" + data.acf.mail + "";
           mail = <li>Epost:<b><a href={mailto}> {data.acf.mail}</a></b></li>;
         }
+        if(data.acf.webb){
+          let webAdress = data.acf.webb;
+          webb =  <li>Webb:<b><a href={webAdress}> {data.acf.webb}</a></b></li>;
+        }
         return <div className={styles.section} >
                   <h4>{data.acf.title}</h4>
                   <ul>
                     {mail}
                     {phone}
+                    {webb}
                   </ul>
                 </div>
       }
