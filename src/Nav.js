@@ -51,6 +51,7 @@ class Nav extends Component {
 					<div id="top" style={this.state.style} >
 						<nav className={styles.nav} >
 							<Link to="/" className={styles.logo} style={partnerLogo} ></Link>
+							<NavItem title="Journalistik" link="/Inlamning" />
 							<NavItem title="Materialinlämning" link="/Inlamning" />
 							<NavItem title="Kontakt" link="/#contact" anchor={true} />
 						</nav>
