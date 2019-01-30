@@ -18,6 +18,15 @@ class Journalistik extends Component {
     this.state = {
     };
   }
+  componentDidMount() {
+    let dataURL = "http://api.ostmedia.se/wp-json/wp/v2/pages";
+    
+    fetch(dataURL)
+      .then(res => res.json())
+      .then(res => {
+          
+      })
+  }
 
     render(){
         return (
@@ -33,8 +42,21 @@ class Journalistik extends Component {
                 </h1>
               </max>
             </div>
+            <div className={splash.description} id="description">
+              <max>
+                <h5 className={splash.descriptionText}> Så jobbar vi med nyheter</h5>
+              </max>
+            </div>
+              <max>
+                <div className={splash.articleContainer}>
+                <h4>Policy</h4>
+                  Lagar och regler för våra mediekanaler
+                  <p>Öst Medias samtliga nyhetsmedier, både tryckta tidningar och nyhetsplattformar online, sorterar under grundlagen: Tryckfrihetsförordningen och Yttrandefrihetsgrundlagen. Enligt dessa ska våra medier ha ansvariga utgivare som tar ansvar för att vi följer såväl grundlagen som de pressetiska reglerna i vår nyhetsverksamhet. </p>
+                </div>
+              </max>
             </div>
             ] 
+            
         );
 
     }
