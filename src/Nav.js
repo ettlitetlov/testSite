@@ -51,7 +51,7 @@ class Nav extends Component {
 					<div id="top" style={this.state.style} >
 						<nav className={styles.nav} >
 							<Link to="/" className={styles.logo} style={partnerLogo} ></Link>
-							<NavItem title="Journalistik" link="/Inlamning" />
+							<NavItem title="Journalistik" link="/journalistik" />
 							<NavItem title="Materialinlämning" link="/Inlamning" />
 							<NavItem title="Kontakt" link="/#contact" anchor={true} />
 						</nav>
@@ -62,6 +62,7 @@ class Nav extends Component {
 					<div id="top" style={this.state.style} >
 						<nav className={styles.nav} >
 							<Link to="/" className={styles.logo}></Link>
+							<NavItem title="Journalistik" link="/journalistik" />
 							<NavItem title="Materialinlämning" link="/Inlamning" />
 							<NavItem title="Kontakt" link="/#contact" anchor={true} />
 						</nav>
