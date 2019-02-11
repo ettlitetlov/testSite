@@ -51,9 +51,12 @@ class Nav extends Component {
 					<div id="top" style={this.state.style} >
 						<nav className={styles.nav} >
 							<Link to="/" className={styles.logo} style={partnerLogo} ></Link>
+							<NavItem title="Prenumerera" link="/nyhetsmedier"/>
 							<NavItem title="Journalistik" link="/journalistik" />
 							<NavItem title="Materialinlämning" link="/Inlamning" />
-							<NavItem title="Kontakt" link="/#contact" anchor={true} />
+							<NavItem title="Annonsera" link="/annonsera"/>
+							<NavItem title="Karriär" link="/karriar"/>
+							<NavItem title="Kontakt" link="/nyhetsmedier" anchor={true} />
 						</nav>
 					</div>
 				);
@@ -62,9 +65,12 @@ class Nav extends Component {
 					<div id="top" style={this.state.style} >
 						<nav className={styles.nav} >
 							<Link to="/" className={styles.logo}></Link>
+							<NavItem title="Prenumerera" link="/nyhetsmedier"/>
 							<NavItem title="Journalistik" link="/journalistik" />
 							<NavItem title="Materialinlämning" link="/Inlamning" />
-							<NavItem title="Kontakt" link="/#contact" anchor={true} />
+							<NavItem title="Annonsera" link="/annonsera"/>
+							<NavItem title="Karriär" link="/karriar"/>
+							<NavItem title="Kontakt" link="/nyhetsmedier" anchor={true} />
 						</nav>
 					</div>
 				);

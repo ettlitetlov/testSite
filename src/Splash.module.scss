@@ -179,6 +179,44 @@ $title-line-width: 3.5px;
 .articleContainer{
 	display: block;
 	width: 100%;
+	margin-top:3%;
+	margin-bottom: 5%;
+	font-family: "Open Sans";
+}
+
+.articleLink{
+	text-decoration: none;
+	font-style: italic;
+	font-size: 20px;
+	color: $light-grey;
+}
+.articleParagraph{
+	font-size: 20px;
+	color: $grey;
+}
+.articleListItem{
+	margin-top: 2%;
+	font-size: 18px;
+	font-family: "Open Sans";
+	list-style: none;
+	color: $grey;
+}
+
+.articleList{
+	margin-top:3%;
+	margin-bottom: 3%;
+}
+.articleSubTitle{
+	margin-top: 5%;
+	font-size: 23px;
+	margin-bottom: 2%;
+	margin-left: 0;
+	color: $dark-blue;
+}
+.articleTitle{
+	font-size: 28px;
+	color: $primary;
+	text-align: center;
 }
 
 

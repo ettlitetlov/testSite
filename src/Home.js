@@ -13,9 +13,7 @@ class Home extends Component {
     return (
       [
       <Nav absolute={true} home={true} />,
-      <Header />,
-      <Contact />,
-      <Footer />
+      <Header />
       ]
     );
   }

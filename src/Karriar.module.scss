@@ -1,0 +1,215 @@
+@import './variables.scss';
+
+$logo-scale: 0.5;
+$logo-width: ($logo-scale * 521px);
+$logo-height: ($logo-width * .7082);
+
+@keyframes flipIt {
+	0% {
+	  transform: translateX(250px) rotateY(-61deg);
+	  opacity: 0.1
+	}
+	50% {
+		transform: rotateY(0deg);
+  
+	  }
+	100% {
+	  transform: translateX(0px);
+	  opacity: 1;
+	}
+  }
+
+header{
+
+	width: 100%;
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	z-index: -5;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+button{
+	margin: 5%;
+	background: rgba($primary,0.3);
+}
+
+.videoContainer{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+      background-color: $primary;
+    z-index: -2;
+}
+.videoContainer::before{
+	content: '';
+	width: 100%;
+	height: 100%;
+	//background: linear-gradient(0.3turn, rgba($primary, 0.4), rgba($primary, 0.5));
+	//background-color: darken($primary,10%);
+	background: radial-gradient(ellipse at top, darken($primary,10%), rgba(1, 74, 163, 0.7) 40%, transparent 100%);
+	opacity: 1;
+	position: absolute;
+	z-index: 2;
+	mix-blend-mode: color;
+}
+
+.videoContainer::after{
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	object-fit: cover;
+	overflow: hidden;
+	background: url(./assets/7634326_.jpg) no-repeat center center fixed;
+	background-position: center;
+	position: absolute;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	top: 0;
+
+	filter: brightness(50%) grayscale(60%);
+}
+.btns{
+	margin-top: 30px;
+	display:flex;
+	color: $primary;
+}
+
+.btns a{
+	margin: 3%;
+	margin-left: 0;
+	margin-right: 6%;
+}
+
+.leftBtn{
+	margin-left: 0;
+}
+
+.mailLink{
+	text-decoration: none;
+	color: $white;
+	font-family: "Open Sans";
+	font-size: 18px;
+}
+
+.headerText {
+	margin-top: 5%;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	width: 95vw;
+
+	animation: flipIt 2.5s cubic-bezier(.29,.82,.17,1.02) 0s 1;
+
+	color: $white;
+	text-shadow: 0px 0px 5px rgba($dark, 0.7);
+}
+
+.headerText h1{
+	font-size: 65px;
+	font-weight: 100;
+	margin: 0;
+	margin-bottom: 20px;
+	font-family: "Open Sans";
+	text-shadow: 2px 2px 4px black;
+}
+.headerText h4{
+	font-size: 18px;
+	font-weight: 100;
+	word-spacing: 3px;
+	line-height: 30px;
+	margin: 0;
+	max-width: 670px;
+	text-align: center;
+	font-family: "Open Sans";
+	color: white;
+	text-shadow: 1px 1px 3px black;
+}
+
+.columnText {
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+	-moz-column-count: 3; /* Firefox */
+	column-count: 3;
+	column-gap: 4%;
+
+	// Text-specific
+	font-size: 22px;
+	font-weight: 100;
+	word-spacing: 3px;
+	line-height: 33px;
+	margin: 0;
+	max-width: 80vw;
+	text-align: left;
+	font-family: "Open Sans";
+	color: white;
+	text-shadow: 2px 2px 1px black;
+}
+
+
+@media (max-width: (50 + $md1)) {
+
+	.headerText {
+		width: 450px;
+	}
+	.headerText h1{
+		font-size: 45px;
+		margin-bottom: 5px;
+	}
+
+	.columnText{
+		width: 95vw;
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+}
+
+@media (max-width: (50 + $sm)) {
+
+	.headerText{
+		width: 80%;
+	}
+	.headerText h1{
+		font-size: 8vw;
+		margin-bottom: 20px;
+	}
+	.headerText h1::after{
+		//content: '';
+		display: block;
+		width: 98%;
+		margin: 15px auto;
+		height: 1px;
+		background-color: white;
+	}
+	.headerText h4{
+		font-size: 3.5vw;
+		line-height: normal;
+		text-align: left;
+	}
+	.columnText{
+		width: 95vw;
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+
+@media (max-width: (50 + $sm)) {
+
+
+	.headerText h4{
+		font-size: 4vw;
+	}
+
+
+}

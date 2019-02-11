@@ -8,11 +8,16 @@ import Inlamning from './Inlamning';
 import Journalistik from './Journalistik';
 import Partners from './Partners';
 import Partner from './Partner';
+import Prenumerera from './Prenumerera';
+import Karriar from './Karriar';
 
 /* font awesome */
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import Annonsera from './Annonsera';
+
+
 
 
 library.add(faAngleDown);
@@ -37,6 +42,9 @@ class App extends Component {
 		      	<Route exact={true} path="/" component={Home} />
 		        <Route path="/inlamning" component={Inlamning} />
 				<Route path="/journalistik" component={Journalistik} />
+				<Route path="/prenumerera" component={Prenumerera} />
+				<Route path="/karriar" component={Karriar} />
+				<Route path="/annonsera" component={Annonsera} />
 		        <Switch>
 			        <Route path="/nyhetsmedier/:name" component={Partner} />
 
