@@ -16,6 +16,8 @@ $padding-y: 40px;
 	position: absolute;
 	top: 0;
 
+
+
 	z-index: 20;
 }
 
@@ -45,6 +47,7 @@ $padding-y: 40px;
 .logo:hover{
 
 	width: 103px;
+
 }
 
 @media (max-width: (50 + $md1)) {

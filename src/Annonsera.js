@@ -38,7 +38,7 @@ class Annonsera extends Component {
 						Kontakta oss på <a className={styles.mailLink} href="mailto:foretagsannons@ostmedia.se">foretagsannons@ostmedia.se</a> så hjälper vi dig direkt!
 						</h4>
 						<ButtonToolbar>
-							<Button variant="info" size="medium">
+							<Button size="lg">
 							Läs mer om våra produkter och medieslag här
 							</Button>
 						</ButtonToolbar>

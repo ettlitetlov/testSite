@@ -3,6 +3,9 @@
 $logo-scale: 0.5;
 $logo-width: ($logo-scale * 521px);
 $logo-height: ($logo-width * .7082);
+$title-padding: 25px;
+$title-line-margin: 15px;
+$title-line-width: 3.5px;
 
 @keyframes flipIt {
 	0% {
@@ -109,12 +112,11 @@ button{
 	justify-content: center;
 	align-items: center;
 	width: 95vw;
-
 	animation: flipIt 2.5s cubic-bezier(.29,.82,.17,1.02) 0s 1;
-
 	color: $white;
 	text-shadow: 0px 0px 5px rgba($dark, 0.7);
 }
+
 
 .headerText h1{
 	font-size: 65px;
@@ -123,7 +125,19 @@ button{
 	margin-bottom: 20px;
 	font-family: "Open Sans";
 	text-shadow: 2px 2px 4px black;
+
 }
+
+/*.headerText h1::before{
+	content: '';
+		display: inline-block;
+		align-self: flex-end;
+		border-radius: 1px;
+		width: $title-line-width;
+		height: 36px;
+		margin-right: $title-line-margin;
+		background-color: $primary;
+} */
 .headerText h4{
 	font-size: 18px;
 	font-weight: 100;

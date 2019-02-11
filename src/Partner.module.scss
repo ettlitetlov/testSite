@@ -23,7 +23,7 @@ $info-padding: 140px;
 	z-index: 5;
 }
 .headerBg{
-	position: absolute;
+	position: fixed;
 	min-width: 100%;
 	height: $header-height;
 	background-color: #eaeaea;
@@ -32,7 +32,7 @@ $info-padding: 140px;
 	background-repeat: no-repeat;
 	background-position: 50% 20%;
 	filter: brightness(90%);
-
+	z-index: -5;
 	transition: all ease-in 0.1s;
 }
 
@@ -165,7 +165,7 @@ $info-padding: 140px;
 	padding-top: $info-padding;
 	padding-bottom: $info-padding;
 
-	background: linear-gradient(.35turn, $primary, darken($primary, 10%));
+	background: none;
 	width: 100%;
 	z-index: -5;
 
