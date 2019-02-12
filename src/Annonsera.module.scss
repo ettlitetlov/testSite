@@ -64,6 +64,15 @@ button{
 	filter: brightness(50%) grayscale(60%);
 }
 
+.btns{
+	margin-top: 20px;
+	display:flex;
+	color: $primary;
+}
+.leftBtn{
+	margin-left: 0;
+}
+
 .mailLink{
 	text-decoration: none;
 	color: $white;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { HashLink as AnchorLink } from "react-router-hash-link";
 
 import styles from './NavItem.module.scss';
@@ -19,9 +19,11 @@ class NavItem extends Component {
 		} else 
 		{
 			return(
-				<Link className={styles.link} to={this.props.link}>
+				<NavLink activeStyle={{
+					borderBottom: '2px solid rgb(255, 255, 255)'
+				  }} className={styles.link} to={this.props.link}>
 					{this.props.title}
-				</Link>
+				</NavLink>
 			);
 		}
 	}

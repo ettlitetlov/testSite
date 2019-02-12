@@ -64,9 +64,9 @@ class Partner extends Component {
       return <div className={styles.headerTitleContact}>
               <ul>
                 <li><b>Telefon:</b> {data.acf.phone}</li>
-                <li><b>Öppettider mån-fre:</b> {data.acf.openhours}</li>
+                <li><b>Öppettider:</b>  Måndag-fredag {data.acf.openhours}</li>
                 <li><b>Besöksaddress:</b>{data.acf.address}</li>
-                <li><b>Epost:</b> <a href={mailto}>{data.acf.mail}</a></li>
+                <li><b>Epost:</b> <a className={styles.mailLink} href={mailto}>{data.acf.mail}</a></li>
               </ul>
              </div>
     });

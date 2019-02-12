@@ -116,7 +116,7 @@ $info-padding: 140px;
 	color: white;
 }
 .headerTitleContact{
-	max-width: 400px;
+	max-width: 450px;
 	padding: $title-padding-y;
 	padding-right: $title-padding-x;
 
@@ -139,6 +139,20 @@ $info-padding: 140px;
 
 	display: flex;
 	align-items: center;
+}
+
+.mailLink{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	sans-serif;
+	list-style-type: none !important;
+	word-break: break-word !important;
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	padding: 5px 0 !important;
+
+	display: flex !important;
+	align-items: center !important;
 }
 .headerTitleContact li b,.headerTitleContact li a{
 	margin-right: 5px;
