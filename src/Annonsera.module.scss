@@ -77,7 +77,7 @@ button{
 	text-decoration: none;
 	color: $white;
 	font-family: "Open Sans";
-	font-size: 18px;
+	font-size: 22px;
 }
 
 .mailLink:hover{
@@ -105,7 +105,7 @@ button{
 	text-shadow: 2px 2px 4px black;
 }
 .headerText h4{
-	font-size: 18px;
+	font-size: 22px;
 	font-weight: 100;
 	word-spacing: 3px;
 	line-height: 30px;
@@ -113,10 +113,8 @@ button{
 	max-width: 670px;
 	text-align: center;
 	font-family: "Open Sans";
-	color: white;
-	text-shadow: 1px 1px 3px black;
+	color: $white;
 }
-
 
 @media (max-width: (50 + $md1)) {
 

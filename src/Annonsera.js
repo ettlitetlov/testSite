@@ -1,25 +1,10 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
-
 import Nav from './Nav.js';
-import video from './assets/bg-video.mp4';
-import Footer from './Footer.js'
 import styles from './Annonsera.module.scss';
 
 class Annonsera extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-		};
-
-
-	}
-
-	componentDidMount(){
-	}
-
 	render() {
 		return([
 		  <Nav absolute={true} />,
@@ -42,8 +27,7 @@ class Annonsera extends Component {
 						</ButtonToolbar>
 					</div>
 
-            </header>,
-            <Footer/>
+            </header>
         ]
 		);
 	}

@@ -13,14 +13,10 @@ import Karriar from './Karriar';
 
 /* font awesome */
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faBars } from '@fortawesome/free-solid-svg-icons';
 import Annonsera from './Annonsera';
 
-
-
-
-library.add(faAngleDown);
+library.add(faAngleDown, faBars);
 
 class App extends Component {
 

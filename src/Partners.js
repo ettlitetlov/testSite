@@ -48,21 +48,23 @@ class Partners extends Component {
     return (
     	[
       <Nav absolute={true} />,
-      <div className={[splash.container, splash.small].join(' ')} id={splash.bg_interview}>
+      <div className={[splash.container].join(' ')} id={splash.bg_interview}>
         <div className={splash.splash}>
           <max>
             <h1 className={splash.title}>
               Nyhetsmedier
-              <AnchorLink to="#description"> 
-                <FontAwesomeIcon icon={["fas", "angle-down"]} size="lg" color="white" className={splash.scroll} />
-              </AnchorLink>
+
             </h1>
           </max>
         </div>
         <div className={splash.description} id="description">
           <max>
             <h5 className={splash.descriptionText}> Vi är aldrig mer än ett telefonsamtal eller mail bort. Här hittar du alla uppgifter du behöver för att nå oss och vi ser fram emot att höra från dig.</h5>
+            <AnchorLink to="#description"> 
+                <FontAwesomeIcon icon={["fas", "angle-down"]} size="9x" color="white" className={splash.scroll_partners} />
+            </AnchorLink>
           </max>
+
         </div>
         <max className={styles.cardMaxContainer} >
           <div className={[styles.cardContainer, splash.cardContainer].join(' ')}>
@@ -70,8 +72,7 @@ class Partners extends Component {
             
           </div>
         </max>
-      </div>,
-      <Footer />
+      </div>
       ]
     );
   }

@@ -1,24 +1,10 @@
 import React, {Component} from 'react';
-import { HashLink as AnchorLink } from "react-router-hash-link";
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
-
 import styles from './Karriar.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import Nav from './Nav';
-import Card from './Card';
-import Footer from './Footer';
 
 class Karriar extends Component {
-
-    
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    };
-  }
   render() {
 		return([
 		  <Nav absolute={true} />,

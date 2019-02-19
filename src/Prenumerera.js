@@ -1,38 +1,74 @@
 import React, {Component} from 'react';
 import { HashLink as AnchorLink } from "react-router-hash-link";
 
+import styles from './Partners.module.scss';
 import splash from './Splash.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Nav from './Nav';
 import Card from './Card';
 import Footer from './Footer';
+import PartnersCard from './PartnersCard';
 
 class Prenumerera extends Component {
 
     
   constructor(props) {
     super(props);
-
+  
     this.state = {
+      partners: []
     };
   }
+
+  componentDidMount() {
+    let dataURL = "http://api.ostmedia.se/wp-json/wp/v2/nyhetsmedia";
+    fetch(dataURL)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          partners: res
+        })
+      })
+  }
   render(){
+    const url = this.props.match.url;
+
+    const partners = this.state.partners.map((nyhetsmedia, i) => {
+      //remove spaces and replace with -. Also covert to lowercase
+      const link = url + "/" + nyhetsmedia.acf.name.toLowerCase().replace(/\s/g, "-");
+      return <PartnersCard title={nyhetsmedia.acf.name} link={nyhetsmedia.acf.subscription} icon={nyhetsmedia.acf.logo.url} order={nyhetsmedia.acf.order} />
+    });
+
     return (
-        [<Nav absolute={true} />,
-        <div className={[splash.container].join(' ')} id={splash.bg_journalistik}>
-        <div className={splash.splash} >
-          <max>
-            <h1 className={splash.title}>
-            Prenumerera
-            <AnchorLink to="#description"> 
-              <FontAwesomeIcon icon={["fas", "angle-down"]} size="lg" color="white" className={splash.scroll} />
-            </AnchorLink>
-            </h1>
+      [
+        <Nav absolute={true} />,
+        <div className={[splash.container].join(' ')} id={splash.bg_fire}>
+          <div className={splash.splash}>
+            <max>
+              <h1 className={splash.title}>
+                ​Kvalitativ journalistik kostar pengar att driva
+  
+              </h1>
+            </max>
+          </div>
+          <div className={splash.description} id="description">
+            <max>
+              <h5 className={splash.descriptionText_prenumerera}> Därför tar vi betalt för vårt innehåll. Som prenumerant finansierar du den vassaste och mest angelägna lokala nyhetsbevakningen. Sett över tid blir du dessutom en av dem som bidrar till den fria och oberoende journalistiken. Den som gör skillnad. </h5>
+              <AnchorLink to="#description"> 
+                  <FontAwesomeIcon icon={["fas", "angle-down"]} size="9x" color="white" className={splash.scroll} />
+              </AnchorLink>
+            </max>
+  
+          </div>
+          <max className={styles.cardMaxContainer} >
+            <div className={[styles.cardContainer, splash.cardContainer].join(' ')}>
+              {partners}
+              
+            </div>
           </max>
         </div>
-        </div>
-        ] 
+        ]
     );
   }
 }

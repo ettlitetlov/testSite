@@ -1,1 +1,29 @@
 @import './variables.scss';
+
+$list-icon-margin: 10px;
+$list-icon-hover-padding: 3px;
+
+.listText ul{
+	padding-inline-start: 0 !important;
+	padding-left: -40 !important;
+}
+.listText li{
+    font-family: "Open Sans";
+    font-size: 17px;
+	padding-top: 15px;
+	list-style-type: none;
+    display: flex;
+	align-items: center;
+}
+/* list item icon */
+.listText li::before{
+	content: '';
+	width: 10px ;
+	height: 10px ;
+	margin-right: $list-icon-margin;
+	display: inline-block;
+	background-image: url(./assets/icons/r_arrow.png);
+	background-size: cover;
+	background-position: center;
+
+}

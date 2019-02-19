@@ -5,8 +5,6 @@ import splash from './Splash.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Nav from './Nav';
-import Card from './Card';
-import Footer from './Footer';
 
 class Journalistik extends Component {
 
@@ -34,17 +32,19 @@ class Journalistik extends Component {
             <div className={splash.splash} >
               <max>
                 <h1 className={splash.title}>
-                Journalistik
-                <AnchorLink to="#description"> 
-                  <FontAwesomeIcon icon={["fas", "angle-down"]} size="lg" color="white" className={splash.scroll} />
-                </AnchorLink>
+                Så jobbar vi med nyheter
+
                 </h1>
               </max>
             </div>
             <div className={splash.description} id="description">
               <max>
-                <h5 className={splash.descriptionText}> Så jobbar vi med nyheter</h5>
+                <h5 className={splash.descriptionText}> </h5>
+                <AnchorLink to="#description"> 
+                  <FontAwesomeIcon icon={["fas", "angle-down"]} size="9x" color="white" className={splash.scroll_journalistik} />
+                </AnchorLink>
               </max>
+ 
             </div>
               <max>
                 <div className={splash.articleContainer}>
@@ -64,6 +64,8 @@ class Journalistik extends Component {
                   <a className={splash.articleLink} href="https://po.se/vill-du-anmala/">
                     Klicka här för att läsa mer om hur du gör en PO-anmälan.
                   </a>
+
+                  <hr></hr>
 
                   <h6 className={splash.articleSubTitle}>Vår publicistiska inriktning</h6>
                   <p className={splash.articleParagraph}>
@@ -92,6 +94,9 @@ class Journalistik extends Component {
                     <li className={splash.articleListItem}>Vi ska inte moralisera och döma, utan sträva efter en nykter och genomtänkt bevakning. Vi ska inte moralisera över människors åsikter, värderingar och livsval.</li>
                     <li className={splash.articleListItem}>Som krönikör i våra kanaler får man gärna roa och även oroa. Men även här ska man vara tydlig, saklig och underbyggd i fakta – samtidigt som man kan ta ut svängarna i sina åsikter.</li>
                   </ul>
+
+                  <hr></hr>
+                  <h6 className={splash.articleSubTitle}>Rapportera frågor eller fel</h6>
                   <p className={splash.articleParagraph}>
                   Du som användare och läsare ska kunna lita på det vi skriver. Och när vi gör fel, ska vi erkänna det, be om ursäkt och rätta våra fel. Du som läsare är alltid 
                   välkommen att höra av dig, inte minst om du upptäcker faktiska fel i vår rapportering. <br/>
@@ -105,9 +110,7 @@ class Journalistik extends Component {
                   <a className={splash.articleLink} href="mailto:tipsa@corren.se">Klicka här för att skicka ett mejl till redaktionen. </a>
                 </div>
               </max>
-            </div>,
-            <Footer />
-            ] 
+            </div>] 
             
         );
 

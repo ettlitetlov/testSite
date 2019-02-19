@@ -9,7 +9,7 @@ class NavItem extends Component {
 
 		
 
-		if(this.props.anchor == true)
+		if(this.props.anchor === true)
 		{
 			return(
 				<AnchorLink className={styles.link} to={this.props.link}>

@@ -7,7 +7,7 @@ $card-height: 140px;
 $card-width-reduction: 20px; //used for responsiveness flexibility
 
 .card{
-	background-color: white;
+	background-color: $white;
 	display: flex;
 	align-items: center;
 
@@ -23,6 +23,11 @@ $card-width-reduction: 20px; //used for responsiveness flexibility
 
 	text-decoration: none;
 	color: $grey;
+}
+
+.card:hover{
+	text-decoration: none;
+	size:150%;
 }
 .cardIcon{
 	max-width: calc(#{$card-height} - #{$card-width-reduction} - #{$icon-padding});
@@ -42,12 +47,6 @@ $card-width-reduction: 20px; //used for responsiveness flexibility
 	word-break: word-break;
 	text-decoration: none;
 }
-.title h3:hover{
-	text-decoration: none;
-}
-.title:hover{
-	text-decoration: none;
-}
 
 @media (max-width: (50 + $md1)) {
 
@@ -64,10 +63,12 @@ $card-width-reduction: 20px; //used for responsiveness flexibility
 		min-width: $partner-card-width;
 		max-width: $partner-card-width;
 		height: $card-height;
+		text-decoration: none;
 	}
 
 	.title h3{
 		font-size: 20px;
+		text-decoration: none;
 	}
 	.cardIcon{
 		width: calc(#{$card-height} - #{$card-width-reduction} - #{$icon-padding});

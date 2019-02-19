@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-
 import { HashLink as AnchorLink } from "react-router-hash-link";
-
 import styles from './Partner.module.scss';
 import splash from './Splash.module.scss';
-
 import Nav from './Nav';
 import ContactInfoCard from './ContactInfoCard';
-import Footer from './Footer';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 
 class Partner extends Component {
 
@@ -56,15 +50,12 @@ class Partner extends Component {
 
   render() {
 
-    const bg_id = "" + this.props.name;
-
-
     const headerCard = this.state.partnerData.map((data,i) => {
       let mailto = "mailto:" + data.acf.mail;
       return <div className={styles.headerTitleContact}>
               <ul>
                 <li><b>Telefon:</b> {data.acf.phone}</li>
-                <li><b>Öppettider:</b>  Måndag-fredag {data.acf.openhours}</li>
+                <li><b>Öppettider:</b> {data.acf.openhours}</li>
                 <li><b>Besöksaddress:</b>{data.acf.address}</li>
                 <li><b>Epost:</b> <a className={styles.mailLink} href={mailto}>{data.acf.mail}</a></li>
               </ul>
@@ -112,8 +103,7 @@ class Partner extends Component {
           {contactCards}
 
         </div>
-      </div>,
-      <Footer />
+      </div>
       ]
     );
   }

@@ -15,10 +15,11 @@ $padding-y: 40px;
 
 	position: absolute;
 	top: 0;
-
-
-
 	z-index: 20;
+}
+
+menu{
+	z-index: -21;
 }
 
 @media screen and (min-width:0\0) and (min-resolution: +72dpi) {
@@ -44,6 +45,28 @@ $padding-y: 40px;
 
 	transition: all ease-in 0.1s;
 }
+menu{
+	margin-right: auto;
+	height: 60px;
+	width: 100px;
+	display: block;
+	transition: all ease-in 0.1s;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+ 
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
 .logo:hover{
 
 	width: 103px;

@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { HashLink as AnchorLink } from "react-router-hash-link";
 
-import styles from './Inlamning.module.scss';
 import splash from './Splash.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Nav from './Nav';
 import Card from './Card';
-import Footer from './Footer';
 
 import printIcon from './assets/icons/print.png';
 import digitalIcon from './assets/icons/digital.PNG';
@@ -37,9 +35,7 @@ class Inlamning extends Component {
           <max>
             <h1 className={splash.title}>
             Materialinlämning
-            <AnchorLink to="#description"> 
-              <FontAwesomeIcon icon={["fas", "angle-down"]} size="lg" color="white" className={splash.scroll} />
-            </AnchorLink>
+
             </h1>
           </max>
         </div>
@@ -48,6 +44,9 @@ class Inlamning extends Component {
             <h5 className={splash.descriptionText}>
               Här hittar du info om hur du levererar material till din bokade annons. Om du inte bokat ännu gör du det först via din ordinarie kontakta hos oss. Saknar du kontaktperson? Kontakta <a href="mailto:foretagsannons@ostmedia.se">foretagsannons@ostmedia.se</a> så hjälper vi dig.
             </h5>
+            <AnchorLink to="#description"> 
+              <FontAwesomeIcon icon={["fas", "angle-down"]} size="9x" color="white" className={splash.scroll} />
+            </AnchorLink>
           </max>
         </div>
         <max>
@@ -90,8 +89,7 @@ class Inlamning extends Component {
             
           </div>
         </max>
-      </div>,
-      <Footer />
+      </div>
       ]
     );
   }

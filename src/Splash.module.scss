@@ -13,13 +13,31 @@ $title-padding: 25px;
 $title-line-margin: 15px;
 $title-line-width: 3.5px;
 
+hr {
+	width: 30%;
+	height: 3px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color:$primary;
+	border: 0 none;
+	margin-top: 100px;
+	margin-bottom:100px;
+}
+
 
 #bg_interview .splash:after{
 	background-image: url(./assets/interview.jpg);
+	height: 100%;
 }
 // Specific class for journalistic
 #bg_journalistik .splash:after{
 	background-image: url(./assets/7798768_.jpg);
+	height: 100%;
+}
+
+#bg_fire .splash::after{
+	background-image: url(./assets/6682802_.jpg);
+	height: 100%;
 }
 #nt .splash:after{
 	background-image: none;
@@ -28,7 +46,7 @@ $title-line-width: 3.5px;
 
 .container{
 	background-color: darken(white, 2%);
-	min-height: 100vh; 
+	height: 100%; 
 	z-index: -20;
 }
 //content layer
@@ -41,7 +59,7 @@ $title-line-width: 3.5px;
 .splash::before{
 	content: '';
 	width: 100%;
-	height: $splash-height;
+	height: 100%;
 	//background: linear-gradient(0.3turn, rgba($primary, 0.4), rgba($primary, 0.5));
 	//background-color: darken($primary,10%);
 	background: radial-gradient(ellipse at top, darken($primary,10%), rgba(1, 74, 163, 0.7) 40%, transparent 100%);
@@ -54,7 +72,7 @@ $title-line-width: 3.5px;
 .splash::after{
 	content: '';
 	width: 100%;
-	height: $splash-height;
+	height: 100%;
 	background-image: url(./assets/norrpan.jpg);
 	background-size: cover;
 	background-position: center;
@@ -96,43 +114,73 @@ $title-line-width: 3.5px;
 }
 .scroll{
 	z-index: 20;
-	margin-left: 20px;
-	margin-top: 12px;
-
+	margin-left: calc(50% - 39.375px);
 	width: 35px;
-	height: 35px;
-
+	height: 60px;
 	transition: all ease-out 0.1s;
+	vertical-align: bottom;
+}
+// For Inlamning
+.scroll_partners{
+	z-index: 20;
+	margin-left: calc(50% - 39.375px);
+	margin-top: 2.5%;
+	width: 35px;
+	height: 60px;
+	transition: all ease-out 0.1s;
+	vertical-align: bottom;
+}
+// For journalistik, has less text.
+.scroll_journalistik{
+	z-index: 20;
+	margin-left: calc(50% - 39.375px);
+	margin-top: 5%;
+	width: 35px;
+	height: 60px;
+	transition: all ease-out 0.1s;
+	vertical-align: bottom;
 }
 .scroll:hover{
 	padding-top:10px;
 }
 .description{
 	height: $splash-description-height;
-	background-color: $primary;
-
+	background-color: transparent;
+	z-index: 5;
+	position: relative;
 }
 .description max{
 	height: 100%;
-
-	display: flex;
+	
+	display: block;
 	align-items: center;
 }
 .descriptionText, .descriptionText a{
 	font-weight: 300;
 	color: $white;
-	width: 700px;
+	width: 70%;
 	line-height: 30px;
 	padding: 0;
 	margin: 0;
+	margin-bottom: 3%;
 	word-spacing: 2px;
-	font-size: 18px;
+	font-size: 22px;
+	font-family: "Open Sans";
 	text-decoration: none;
 }
 
-// Specific class for journalistik
-#bg_journalistik .descriptionText{
-	font-size: 30px;
+.descriptionText_prenumerera{
+	font-weight: 300;
+	color: $white;
+	width: 70%;
+	line-height: 30px;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 0.5%;
+	word-spacing: 2px;
+	font-size: 22px;
+	font-family: "Open Sans";
+	text-decoration: none;
 }
 
 .descriptionText a[href*="mailto"]:hover{
@@ -185,20 +233,28 @@ $title-line-width: 3.5px;
 }
 
 .articleLink{
+	font-family: "Open Sans";
+	font-weight: 300;
 	text-decoration: none;
 	font-style: italic;
 	font-size: 20px;
 	color: $light-grey;
 }
+
+.articleLink:hover{
+	color: $light-grey;
+}
 .articleParagraph{
-	font-size: 20px;
+	font-size: 22px;
+	font-family: "Open Sans";
+	font-weight: 300;
 	color: $grey;
 }
 .articleListItem{
 	margin-top: 2%;
-	font-size: 18px;
+	font-size: 21px;
 	font-family: "Open Sans";
-	list-style: none;
+	font-weight: 100;
 	color: $grey;
 }
 
@@ -207,15 +263,29 @@ $title-line-width: 3.5px;
 	margin-bottom: 3%;
 }
 .articleSubTitle{
-	margin-top: 5%;
-	font-size: 23px;
+	margin: 0;
+	font-size: 40px;
 	margin-bottom: 2%;
-	margin-left: 0;
-	color: $dark-blue;
+	font-family: "Open Sans";
+	font-weight: 100;
+	font-size: 50px;
+	display: inline-flex;
+	align-items: center;
+	padding: $title-padding;
+	margin-left: -($title-line-margin + $title-padding + $title-line-width + 1);
+}
+
+.articleSubTitle::before{
+	content: '';
+	display: inline-block;
+	width: $title-line-width;
+	height: 36px;
+	margin-right: $title-line-margin;
+	background-color: $primary;
 }
 .articleTitle{
-	font-size: 28px;
-	color: $primary;
+	font-family: "Open Sans";
+	font-size: 40px !important;
 	text-align: center;
 }
 
@@ -296,8 +366,8 @@ $title-line-width: 3.5px;
 	}
 
 	.description > max{
-		display: flex;
 		justify-content: center;
+		display: block;
 	}
 	.descriptionText, .descriptionText a{
 		font-size: 14px;
