@@ -16,12 +16,12 @@ self.__precacheManifest = [
     "url": "/testSite/static/js/2.e1770aaa.chunk.js"
   },
   {
-    "revision": "09e5ee27bd02972f825f94be75bb4770",
-    "url": "/testSite/static/media/norrpan.09e5ee27.jpg"
-  },
-  {
     "revision": "ef690b8842ff53bc854828931dc1e933",
     "url": "/testSite/static/media/interview.ef690b88.jpg"
+  },
+  {
+    "revision": "09e5ee27bd02972f825f94be75bb4770",
+    "url": "/testSite/static/media/norrpan.09e5ee27.jpg"
   },
   {
     "revision": "4dfd1014606b1ed235c7d9a1df02eca4",
